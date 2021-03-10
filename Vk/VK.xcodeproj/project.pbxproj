@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E11398125F80157002943B7 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398025F80156002943B7 /* GroupsTableViewController.swift */; };
+		7E11398625F802A1002943B7 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398525F802A1002943B7 /* GroupTableViewCell.swift */; };
+		7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */; };
+		7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */; };
+		7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */; };
+		7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */; };
+		7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2625F948850078155C /* FriendTableViewCell.swift */; };
+		7EDCCD3125F953370078155C /* ImageFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */; };
+		7EDCCD3925F959190078155C /* ImageFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD3825F959190078155C /* ImageFriendViewController.swift */; };
+		7EDCCD4325F963140078155C /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD4225F963140078155C /* UserTableViewController.swift */; };
+		7EDCCD4825F9632B0078155C /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD4725F9632B0078155C /* GroupTableViewController.swift */; };
 		7EFB66B525EBA30B00711CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */; };
 		7EFB66B725EBA30B00711CC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */; };
 		7EFB66BC25EBA30B00711CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB66BA25EBA30B00711CC0 /* Main.storyboard */; };
@@ -35,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E11398025F80156002943B7 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		7E11398525F802A1002943B7 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupTableViewController.swift; sourceTree = "<group>"; };
+		7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupViewController.swift; sourceTree = "<group>"; };
+		7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		7EDCCD2625F948850078155C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EDCCD3825F959190078155C /* ImageFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFriendViewController.swift; sourceTree = "<group>"; };
+		7EDCCD4225F963140078155C /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		7EDCCD4725F9632B0078155C /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		7EFB66B125EBA30B00711CC0 /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +98,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E11399925F93FAA002943B7 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				7E11398525F802A1002943B7 /* GroupTableViewCell.swift */,
+				7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */,
+				7E11398025F80156002943B7 /* GroupsTableViewController.swift */,
+				7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */,
+				7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		7EDCCD3D25F962360078155C /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				7EDCCD2625F948850078155C /* FriendTableViewCell.swift */,
+				7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */,
+				7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */,
+				7EDCCD3825F959190078155C /* ImageFriendViewController.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		7EDCCD4125F962A80078155C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EDCCD4225F963140078155C /* UserTableViewController.swift */,
+				7EDCCD4725F9632B0078155C /* GroupTableViewController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7EFB66A825EBA30B00711CC0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +153,9 @@
 		7EFB66B325EBA30B00711CC0 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				7E11399925F93FAA002943B7 /* Group */,
+				7EDCCD3D25F962360078155C /* Friend */,
+				7EDCCD4125F962A80078155C /* Model */,
 				7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */,
 				7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */,
 				7EFB66EA25EBA39600711CC0 /* LoginFormController.swift */,
@@ -258,9 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EDCCD3925F959190078155C /* ImageFriendViewController.swift in Sources */,
 				7EFB66EB25EBA39600711CC0 /* LoginFormController.swift in Sources */,
+				7EDCCD4325F963140078155C /* UserTableViewController.swift in Sources */,
+				7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */,
+				7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */,
+				7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */,
+				7EDCCD3125F953370078155C /* ImageFriendCollectionViewCell.swift in Sources */,
+				7EDCCD4825F9632B0078155C /* GroupTableViewController.swift in Sources */,
+				7E11398125F80157002943B7 /* GroupsTableViewController.swift in Sources */,
+				7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */,
 				7EFB66B525EBA30B00711CC0 /* AppDelegate.swift in Sources */,
+				7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */,
 				7EFB66B725EBA30B00711CC0 /* SceneDelegate.swift in Sources */,
+				7E11398625F802A1002943B7 /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
