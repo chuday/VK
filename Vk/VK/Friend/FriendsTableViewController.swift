@@ -10,6 +10,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     
     var friends = ["Alex", "Den", "Valera", "Inna", "Olga"]
+    
     var selectedFriend: String?
     
     override func viewDidLoad() {

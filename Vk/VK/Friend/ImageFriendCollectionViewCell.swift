@@ -10,6 +10,7 @@ import UIKit
 class ImageFriendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageFriend: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()

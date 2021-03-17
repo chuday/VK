@@ -12,6 +12,10 @@
 		7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */; };
 		7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */; };
 		7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */; };
+		7E24611926012A95006F3143 /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24611826012A95006F3143 /* MyImageView.swift */; };
+		7E24611E26012C9E006F3143 /* ImageViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24611D26012C9E006F3143 /* ImageViewShadow.swift */; };
+		7E3D865E2601A72B00D48E87 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D865D2601A72B00D48E87 /* LikeButton.swift */; };
+		7E8EA70A2601D834000B1F28 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA7092601D834000B1F28 /* MyView.swift */; };
 		7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */; };
 		7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2625F948850078155C /* FriendTableViewCell.swift */; };
 		7EDCCD3125F953370078155C /* ImageFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */; };
@@ -51,6 +55,10 @@
 		7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupTableViewController.swift; sourceTree = "<group>"; };
 		7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupViewController.swift; sourceTree = "<group>"; };
 		7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E24611826012A95006F3143 /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
+		7E24611D26012C9E006F3143 /* ImageViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewShadow.swift; sourceTree = "<group>"; };
+		7E3D865D2601A72B00D48E87 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		7E8EA7092601D834000B1F28 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		7EDCCD2625F948850078155C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFriendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +118,15 @@
 			path = Group;
 			sourceTree = "<group>";
 		};
+		7E3D864F2601303A00D48E87 /* MyView & Shadow */ = {
+			isa = PBXGroup;
+			children = (
+				7E24611826012A95006F3143 /* MyImageView.swift */,
+				7E24611D26012C9E006F3143 /* ImageViewShadow.swift */,
+			);
+			path = "MyView & Shadow";
+			sourceTree = "<group>";
+		};
 		7EDCCD3D25F962360078155C /* Friend */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,10 +173,13 @@
 				7E11399925F93FAA002943B7 /* Group */,
 				7EDCCD3D25F962360078155C /* Friend */,
 				7EDCCD4125F962A80078155C /* Model */,
+				7E3D864F2601303A00D48E87 /* MyView & Shadow */,
 				7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */,
 				7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */,
 				7EFB66EA25EBA39600711CC0 /* LoginFormController.swift */,
+				7E3D865D2601A72B00D48E87 /* LikeButton.swift */,
 				7EFB66BA25EBA30B00711CC0 /* Main.storyboard */,
+				7E8EA7092601D834000B1F28 /* MyView.swift */,
 				7EFB66BD25EBA30C00711CC0 /* Assets.xcassets */,
 				7EFB66BF25EBA30C00711CC0 /* LaunchScreen.storyboard */,
 				7EFB66C225EBA30C00711CC0 /* Info.plist */,
@@ -319,12 +339,16 @@
 				7EFB66EB25EBA39600711CC0 /* LoginFormController.swift in Sources */,
 				7EDCCD4325F963140078155C /* UserTableViewController.swift in Sources */,
 				7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */,
+				7E3D865E2601A72B00D48E87 /* LikeButton.swift in Sources */,
 				7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */,
 				7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */,
 				7EDCCD3125F953370078155C /* ImageFriendCollectionViewCell.swift in Sources */,
 				7EDCCD4825F9632B0078155C /* GroupTableViewController.swift in Sources */,
+				7E24611926012A95006F3143 /* MyImageView.swift in Sources */,
 				7E11398125F80157002943B7 /* GroupsTableViewController.swift in Sources */,
 				7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */,
+				7E8EA70A2601D834000B1F28 /* MyView.swift in Sources */,
+				7E24611E26012C9E006F3143 /* ImageViewShadow.swift in Sources */,
 				7EFB66B525EBA30B00711CC0 /* AppDelegate.swift in Sources */,
 				7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */,
 				7EFB66B725EBA30B00711CC0 /* SceneDelegate.swift in Sources */,
