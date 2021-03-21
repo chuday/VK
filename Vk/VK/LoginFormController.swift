@@ -12,7 +12,20 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-
+    @IBOutlet weak var passwordEye: UIButton!
+    
+    
+    @IBAction func passwordEye(_ sender: Any) {
+        passwordInput.isSecureTextEntry = false
+        passwordEye.tintColor = .darkGray
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.passwordInput.isSecureTextEntry = true
+        }
+    }
+    
+   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

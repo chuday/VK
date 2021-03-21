@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginFormController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="VK" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -51,18 +51,18 @@
                                             <segue destination="ex3-5S-JTU" kind="show" id="fbV-Ox-bxf"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-VZ-Zmu">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-VZ-Zmu">
                                         <rect key="frame" x="132" y="150" width="150" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="Uvb-8H-AvQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="YmC-Zu-LAK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-da-nbi">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-da-nbi">
                                         <rect key="frame" x="132" y="245" width="150" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="BkK-fq-RrQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="BkK-fq-RrQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -76,7 +76,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-Hm-IlU">
                                         <rect key="frame" x="185" y="394" width="44" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="6X8-TW-Zor"/>
                                             <constraint firstAttribute="height" constant="30" id="rJU-qJ-5t7"/>
                                         </constraints>
                                         <state key="normal" title="View 1"/>
@@ -88,21 +87,33 @@
                                         <rect key="frame" x="184" y="438" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="34B-Bt-yCs"/>
-                                            <constraint firstAttribute="width" constant="46" id="5Wd-TS-ZGj"/>
                                         </constraints>
                                         <state key="normal" title="View 2"/>
                                         <connections>
                                             <segue destination="Zyt-mm-z82" kind="show" id="fyR-ZG-pSI"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUj-cF-8TD">
+                                        <rect key="frame" x="247" y="251" width="26" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="B8E-bu-6kB"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <state key="normal" image="eye" catalog="system"/>
+                                        <connections>
+                                            <action selector="passwordEye:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UXd-Tt-U5c"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="KUj-cF-8TD" firstAttribute="top" secondItem="sMe-da-nbi" secondAttribute="bottom" constant="-28" id="2og-2Y-Ccf"/>
                                     <constraint firstItem="ZDY-RT-ciF" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="Geh-EX-9Wh"/>
                                     <constraint firstItem="enL-Dz-jQA" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="Lth-H2-OVq"/>
                                     <constraint firstAttribute="trailing" secondItem="ROq-io-j87" secondAttribute="trailing" constant="185" id="NTE-Xr-b1V"/>
                                     <constraint firstAttribute="bottom" secondItem="ROq-io-j87" secondAttribute="bottom" constant="20" id="Qoc-oh-dAA"/>
                                     <constraint firstItem="ROq-io-j87" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="T0P-vK-3qd"/>
                                     <constraint firstItem="sMe-da-nbi" firstAttribute="top" secondItem="enL-Dz-jQA" secondAttribute="bottom" constant="20" id="Tc8-1v-Y1P"/>
+                                    <constraint firstItem="ZDY-RT-ciF" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="buI-bI-H37"/>
                                     <constraint firstItem="ROq-io-j87" firstAttribute="top" secondItem="sMe-da-nbi" secondAttribute="bottom" constant="20" id="dEv-r7-vTt"/>
                                     <constraint firstItem="uig-gX-XU1" firstAttribute="top" secondItem="67J-qy-hCZ" secondAttribute="bottom" constant="20" id="g7b-8r-it3"/>
                                     <constraint firstItem="HQY-Hm-IlU" firstAttribute="top" secondItem="ROq-io-j87" secondAttribute="bottom" constant="65" id="gQA-PS-Jlh"/>
@@ -110,6 +121,7 @@
                                     <constraint firstItem="ZDY-RT-ciF" firstAttribute="top" secondItem="HQY-Hm-IlU" secondAttribute="bottom" constant="14" id="hm5-Hg-Bc4"/>
                                     <constraint firstItem="HQY-Hm-IlU" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="kDV-sA-Mhx"/>
                                     <constraint firstItem="5EK-VZ-Zmu" firstAttribute="top" secondItem="uig-gX-XU1" secondAttribute="bottom" constant="20" id="kXY-uy-SMA"/>
+                                    <constraint firstItem="KUj-cF-8TD" firstAttribute="leading" secondItem="sMe-da-nbi" secondAttribute="trailing" constant="-35" id="oAD-mJ-HzS"/>
                                     <constraint firstItem="67J-qy-hCZ" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="ocN-Nh-L7K"/>
                                     <constraint firstItem="enL-Dz-jQA" firstAttribute="top" secondItem="5EK-VZ-Zmu" secondAttribute="bottom" constant="20" id="r7i-g2-cdi"/>
                                     <constraint firstItem="5EK-VZ-Zmu" firstAttribute="centerX" secondItem="CRC-gm-9Pe" secondAttribute="centerX" id="sCV-EF-3kZ"/>
@@ -128,9 +140,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="CRC-gm-9Pe" secondAttribute="top" id="MOB-QS-QIa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CRC-gm-9Pe" secondAttribute="bottom" id="Siw-n0-cia"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                <point key="value" x="1" y="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="colorStart">
+                                <color key="value" systemColor="systemTealColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="colorEnd">
+                                <color key="value" systemColor="systemYellowColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="loginInput" destination="5EK-VZ-Zmu" id="Wuy-kC-i3R"/>
+                        <outlet property="passwordEye" destination="KUj-cF-8TD" id="DZh-1X-sCs"/>
                         <outlet property="passwordInput" destination="sMe-da-nbi" id="t1I-eu-AlW"/>
                         <outlet property="scrollView" destination="CRC-gm-9Pe" id="lCW-kh-XGU"/>
                     </connections>
@@ -588,6 +612,26 @@
                             <constraint firstItem="cxN-ZO-8By" firstAttribute="trailing" secondItem="uzH-lW-b1z" secondAttribute="trailing" constant="135.5" id="ehv-40-L5E"/>
                             <constraint firstItem="Cwu-Or-Grz" firstAttribute="centerX" secondItem="1ib-av-TBr" secondAttribute="centerX" id="ttZ-QO-mfX"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="colorStart">
+                                <color key="value" name="AccentColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="colorEnd">
+                                <color key="value" systemColor="systemGreenColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="locationStart">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="locationEnd">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                <point key="value" x="0.0" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                <point key="value" x="0.0" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="mth-U2-0sk"/>
                 </viewController>
@@ -696,6 +740,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <image name="f0" width="430" height="340.5"/>
         <image name="f1" width="112.5" height="112.5"/>
         <image name="f3" width="129.5" height="97"/>
@@ -706,11 +751,23 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

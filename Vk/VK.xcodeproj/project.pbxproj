@@ -16,6 +16,7 @@
 		7E24611E26012C9E006F3143 /* ImageViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24611D26012C9E006F3143 /* ImageViewShadow.swift */; };
 		7E3D865E2601A72B00D48E87 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D865D2601A72B00D48E87 /* LikeButton.swift */; };
 		7E8EA70A2601D834000B1F28 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8EA7092601D834000B1F28 /* MyView.swift */; };
+		7ECBA81026047B3900FABE9D /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECBA80F26047B3900FABE9D /* Gradient.swift */; };
 		7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */; };
 		7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2625F948850078155C /* FriendTableViewCell.swift */; };
 		7EDCCD3125F953370078155C /* ImageFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */; };
@@ -59,6 +60,7 @@
 		7E24611D26012C9E006F3143 /* ImageViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewShadow.swift; sourceTree = "<group>"; };
 		7E3D865D2601A72B00D48E87 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		7E8EA7092601D834000B1F28 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		7ECBA80F26047B3900FABE9D /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		7EDCCD2625F948850078155C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFriendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */,
 				7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */,
 				7EFB66EA25EBA39600711CC0 /* LoginFormController.swift */,
+				7ECBA80F26047B3900FABE9D /* Gradient.swift */,
 				7E3D865D2601A72B00D48E87 /* LikeButton.swift */,
 				7EFB66BA25EBA30B00711CC0 /* Main.storyboard */,
 				7E8EA7092601D834000B1F28 /* MyView.swift */,
@@ -340,6 +343,7 @@
 				7EDCCD4325F963140078155C /* UserTableViewController.swift in Sources */,
 				7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */,
 				7E3D865E2601A72B00D48E87 /* LikeButton.swift in Sources */,
+				7ECBA81026047B3900FABE9D /* Gradient.swift in Sources */,
 				7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */,
 				7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */,
 				7EDCCD3125F953370078155C /* ImageFriendCollectionViewCell.swift in Sources */,
