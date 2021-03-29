@@ -12,6 +12,13 @@
 		7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */; };
 		7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */; };
 		7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */; };
+		7E21A027260F9EE90019DFEC /* FriendsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */; };
+		7E21A028260F9EE90019DFEC /* FriendsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */; };
+		7E21A03C260F9FA20019DFEC /* CommentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A03B260F9FA20019DFEC /* CommentButton.swift */; };
+		7E21A041260F9FBE0019DFEC /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A040260F9FBE0019DFEC /* ShareButton.swift */; };
+		7E21A04A260FA01F0019DFEC /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A049260FA01F0019DFEC /* NewsTableViewController.swift */; };
+		7E21A053260FA0620019DFEC /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A051260FA0620019DFEC /* NewsTableViewCell.swift */; };
+		7E21A054260FA0620019DFEC /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E21A052260FA0620019DFEC /* NewsTableViewCell.xib */; };
 		7E24611926012A95006F3143 /* MyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24611826012A95006F3143 /* MyImageView.swift */; };
 		7E24611E26012C9E006F3143 /* ImageViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E24611D26012C9E006F3143 /* ImageViewShadow.swift */; };
 		7E3D865E2601A72B00D48E87 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D865D2601A72B00D48E87 /* LikeButton.swift */; };
@@ -56,6 +63,13 @@
 		7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupTableViewController.swift; sourceTree = "<group>"; };
 		7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupViewController.swift; sourceTree = "<group>"; };
 		7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewHeader.swift; sourceTree = "<group>"; };
+		7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewHeader.xib; sourceTree = "<group>"; };
+		7E21A03B260F9FA20019DFEC /* CommentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentButton.swift; sourceTree = "<group>"; };
+		7E21A040260F9FBE0019DFEC /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		7E21A049260FA01F0019DFEC /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		7E21A051260FA0620019DFEC /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7E21A052260FA0620019DFEC /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		7E24611826012A95006F3143 /* MyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageView.swift; sourceTree = "<group>"; };
 		7E24611D26012C9E006F3143 /* ImageViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewShadow.swift; sourceTree = "<group>"; };
 		7E3D865D2601A72B00D48E87 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
@@ -120,11 +134,33 @@
 			path = Group;
 			sourceTree = "<group>";
 		};
+		7E21A032260F9F650019DFEC /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				7E3D865D2601A72B00D48E87 /* LikeButton.swift */,
+				7E21A03B260F9FA20019DFEC /* CommentButton.swift */,
+				7E21A040260F9FBE0019DFEC /* ShareButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		7E21A048260F9FEE0019DFEC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				7E21A049260FA01F0019DFEC /* NewsTableViewController.swift */,
+				7E21A051260FA0620019DFEC /* NewsTableViewCell.swift */,
+				7E21A052260FA0620019DFEC /* NewsTableViewCell.xib */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		7E3D864F2601303A00D48E87 /* MyView & Shadow */ = {
 			isa = PBXGroup;
 			children = (
+				7E8EA7092601D834000B1F28 /* MyView.swift */,
 				7E24611826012A95006F3143 /* MyImageView.swift */,
 				7E24611D26012C9E006F3143 /* ImageViewShadow.swift */,
+				7ECBA80F26047B3900FABE9D /* Gradient.swift */,
 			);
 			path = "MyView & Shadow";
 			sourceTree = "<group>";
@@ -136,6 +172,8 @@
 				7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */,
 				7EDCCD3025F953370078155C /* ImageFriendCollectionViewCell.swift */,
 				7EDCCD3825F959190078155C /* ImageFriendViewController.swift */,
+				7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */,
+				7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -176,13 +214,12 @@
 				7EDCCD3D25F962360078155C /* Friend */,
 				7EDCCD4125F962A80078155C /* Model */,
 				7E3D864F2601303A00D48E87 /* MyView & Shadow */,
+				7E21A032260F9F650019DFEC /* Button */,
+				7E21A048260F9FEE0019DFEC /* News */,
 				7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */,
 				7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */,
 				7EFB66EA25EBA39600711CC0 /* LoginFormController.swift */,
-				7ECBA80F26047B3900FABE9D /* Gradient.swift */,
-				7E3D865D2601A72B00D48E87 /* LikeButton.swift */,
 				7EFB66BA25EBA30B00711CC0 /* Main.storyboard */,
-				7E8EA7092601D834000B1F28 /* MyView.swift */,
 				7EFB66BD25EBA30C00711CC0 /* Assets.xcassets */,
 				7EFB66BF25EBA30C00711CC0 /* LaunchScreen.storyboard */,
 				7EFB66C225EBA30C00711CC0 /* Info.plist */,
@@ -312,8 +349,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EFB66C125EBA30C00711CC0 /* LaunchScreen.storyboard in Resources */,
+				7E21A028260F9EE90019DFEC /* FriendsTableViewHeader.xib in Resources */,
 				7EFB66BE25EBA30C00711CC0 /* Assets.xcassets in Resources */,
 				7EFB66BC25EBA30B00711CC0 /* Main.storyboard in Resources */,
+				7E21A054260FA0620019DFEC /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,9 +378,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EDCCD3925F959190078155C /* ImageFriendViewController.swift in Sources */,
+				7E21A027260F9EE90019DFEC /* FriendsTableViewHeader.swift in Sources */,
+				7E21A053260FA0620019DFEC /* NewsTableViewCell.swift in Sources */,
 				7EFB66EB25EBA39600711CC0 /* LoginFormController.swift in Sources */,
 				7EDCCD4325F963140078155C /* UserTableViewController.swift in Sources */,
+				7E21A041260F9FBE0019DFEC /* ShareButton.swift in Sources */,
 				7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */,
+				7E21A03C260F9FA20019DFEC /* CommentButton.swift in Sources */,
 				7E3D865E2601A72B00D48E87 /* LikeButton.swift in Sources */,
 				7ECBA81026047B3900FABE9D /* Gradient.swift in Sources */,
 				7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */,
@@ -350,6 +393,7 @@
 				7EDCCD4825F9632B0078155C /* GroupTableViewController.swift in Sources */,
 				7E24611926012A95006F3143 /* MyImageView.swift in Sources */,
 				7E11398125F80157002943B7 /* GroupsTableViewController.swift in Sources */,
+				7E21A04A260FA01F0019DFEC /* NewsTableViewController.swift in Sources */,
 				7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */,
 				7E8EA70A2601D834000B1F28 /* MyView.swift in Sources */,
 				7E24611E26012C9E006F3143 /* ImageViewShadow.swift in Sources */,
