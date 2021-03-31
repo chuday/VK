@@ -9,6 +9,7 @@ import UIKit
 
 struct FriendInfo {
     var name: String
+    var image: UIImage
 }
 
 class ImageFriendViewController: UIViewController {
@@ -25,10 +26,10 @@ class ImageFriendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         friend = [
-        FriendInfo(name: "Photo 1"),
-        FriendInfo(name: "Photo 2"),
-        FriendInfo(name: "Photo 3"),
-        FriendInfo(name: "Photo 4")
+        FriendInfo(name: "Photo 1", image: #imageLiteral(resourceName: "f2")),
+        FriendInfo(name: "Photo 2", image: #imageLiteral(resourceName: "f5")),
+        FriendInfo(name: "Photo 3", image: #imageLiteral(resourceName: "f3")),
+        FriendInfo(name: "Photo 4", image: #imageLiteral(resourceName: "f4"))
         ]
     }
 }
@@ -47,6 +48,8 @@ extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageFriendCollectionViewCell
         let friends = friend[indexPath.item]
         cell.nameLabel.text = "\(friends.name)"
+        cell.imageFriend.image = friends.image
+    
         return cell
     }
 }
