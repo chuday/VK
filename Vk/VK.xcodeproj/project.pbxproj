@@ -12,6 +12,7 @@
 		7E11398B25F805B0002943B7 /* AllGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */; };
 		7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */; };
 		7E11399525F81285002943B7 /* ImageGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */; };
+		7E196096261A05F20086F3D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E196095261A05F20086F3D7 /* User.swift */; };
 		7E21A027260F9EE90019DFEC /* FriendsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */; };
 		7E21A028260F9EE90019DFEC /* FriendsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */; };
 		7E21A03C260F9FA20019DFEC /* CommentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E21A03B260F9FA20019DFEC /* CommentButton.swift */; };
@@ -63,6 +64,7 @@
 		7E11398A25F805B0002943B7 /* AllGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupTableViewController.swift; sourceTree = "<group>"; };
 		7E11398F25F80D33002943B7 /* ImageGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupViewController.swift; sourceTree = "<group>"; };
 		7E11399425F81285002943B7 /* ImageGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E196095261A05F20086F3D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewHeader.swift; sourceTree = "<group>"; };
 		7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewHeader.xib; sourceTree = "<group>"; };
 		7E21A03B260F9FA20019DFEC /* CommentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentButton.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				7EDCCD3825F959190078155C /* ImageFriendViewController.swift */,
 				7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */,
 				7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */,
+				7E196095261A05F20086F3D7 /* User.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				7EDCCD3925F959190078155C /* ImageFriendViewController.swift in Sources */,
 				7E21A027260F9EE90019DFEC /* FriendsTableViewHeader.swift in Sources */,
 				7E21A053260FA0620019DFEC /* NewsTableViewCell.swift in Sources */,
+				7E196096261A05F20086F3D7 /* User.swift in Sources */,
 				7EFB66EB25EBA39600711CC0 /* LoginFormController.swift in Sources */,
 				7EDCCD4325F963140078155C /* UserTableViewController.swift in Sources */,
 				7E21A041260F9FBE0019DFEC /* ShareButton.swift in Sources */,

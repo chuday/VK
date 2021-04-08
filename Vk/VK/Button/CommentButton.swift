@@ -16,15 +16,9 @@ import UIKit
         }
     }
     
-//    @IBInspectable var likeImage: UIImage? = nil {
-//        didSet {
-//            likeImageView.image = likeImage
-//        }
-//    }
   
     private var stackView: UIStackView!
     private var commentLabel: UILabel!
-//    private var likeImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,9 +37,6 @@ import UIKit
     
     private func commonInit() {
         commentLabel = UILabel()
-//        likeImageView = UIImageView()
-//        likeImageView.contentMode = .scaleAspectFit
-//        countLabel.textAlignment = .left
         stackView = UIStackView(arrangedSubviews: [commentLabel])
         addSubview(stackView)
         stackView.spacing = 0
@@ -56,7 +47,6 @@ import UIKit
     }
     
     private func updateLabelText() {
-//        let additionalLike = isSelected ? 1 : 0
         commentLabel.text = "comment"
         
     }
@@ -64,7 +54,6 @@ import UIKit
     private func updateSelectionState() {
         let color = isSelected ? tintColor : .black
         commentLabel.textColor = color
-//        likeImageView.tintColor = color
         updateLabelText()
     }
     
@@ -72,6 +61,12 @@ import UIKit
         isSelected = !isSelected
         updateSelectionState()
         sendActions(for: .valueChanged)
+        textCommentChange()
+
+    }
+    
+    func textCommentChange() {
+        UIView.transition(with: commentLabel, duration: 0.5, options: [.transitionCrossDissolve]) { self.commentLabel.text = "change"}
     }
     
 }

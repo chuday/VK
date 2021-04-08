@@ -7,10 +7,6 @@
 
 import UIKit
 
-struct FriendInfo {
-    var name: String
-    var image: UIImage
-}
 
 class ImageFriendViewController: UIViewController {
     
@@ -21,16 +17,10 @@ class ImageFriendViewController: UIViewController {
         }
     }
 
-    var friend = [FriendInfo]()
-    
+    var friend: User?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        friend = [
-        FriendInfo(name: "Photo 1", image: #imageLiteral(resourceName: "f2")),
-        FriendInfo(name: "Photo 2", image: #imageLiteral(resourceName: "f5")),
-        FriendInfo(name: "Photo 3", image: #imageLiteral(resourceName: "f3")),
-        FriendInfo(name: "Photo 4", image: #imageLiteral(resourceName: "f4"))
-        ]
     }
 }
 
@@ -41,14 +31,14 @@ extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friend.count
+        return friend?.usersPhoto.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageFriendCollectionViewCell
-        let friends = friend[indexPath.item]
-        cell.nameLabel.text = "\(friends.name)"
-        cell.imageFriend.image = friends.image
+       
+        let photo = friend?.usersPhoto[indexPath.row]
+        cell.imageFriend.image = UIImage(named: photo!)
     
         return cell
     }
