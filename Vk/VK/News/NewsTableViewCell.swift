@@ -9,11 +9,9 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
     
     @IBOutlet weak var avtorLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
@@ -21,14 +19,11 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var imageAvtor: UIImageView!
     @IBOutlet weak var imageNews: UIImageView!
 
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         avtorLabel.text = ""
         dataLabel.text = ""
         textNews.text = ""
         imageView?.image = nil
-//        imageAvtor.image = nil
     }
-    
 }

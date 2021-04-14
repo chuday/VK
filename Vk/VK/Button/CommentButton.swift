@@ -15,7 +15,6 @@ import UIKit
           updateLabelText()
         }
     }
-    
   
     private var stackView: UIStackView!
     private var commentLabel: UILabel!
@@ -68,5 +67,4 @@ import UIKit
     func textCommentChange() {
         UIView.transition(with: commentLabel, duration: 0.5, options: [.transitionCrossDissolve]) { self.commentLabel.text = "change"}
     }
-    
 }

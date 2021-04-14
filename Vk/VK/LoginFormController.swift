@@ -14,6 +14,8 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordEye: UIButton!
     
+    @IBOutlet weak var viewTarinsition: UIView!
+    
     @IBOutlet weak var loadOne: UILabel!
     @IBOutlet weak var loadTwo: UILabel!
     @IBOutlet weak var loadTree: UILabel!

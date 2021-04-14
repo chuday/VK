@@ -7,7 +7,8 @@
 
 import UIKit
 
-@IBDesignable class MyImageView: UIImageView {
+//@IBDesignable
+class MyImageView: UIImageView {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.masksToBounds = cornerRadius > 0
