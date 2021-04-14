@@ -1,29 +1,30 @@
 //
-//  LikeButton.swift
+//  ShareButton.swift
 //  VK
 //
-//  Created by Михаил Чудаев on 17.03.2021.
+//  Created by Михаил Чудаев on 27.03.2021.
 //
 
 import UIKit
 
-@IBDesignable class LikeButton: UIControl {
+
+@IBDesignable class ShareButton: UIControl {
     
-    @IBInspectable var likeCount: Int = 0 {
+    @IBInspectable var share: String = "" {
         didSet {
           updateLabelText()
         }
     }
     
-    @IBInspectable var likeImage: UIImage? = nil {
+    @IBInspectable var shareImage: UIImage? = nil {
         didSet {
-            likeImageView.image = likeImage
+            shareImageView.image = shareImage
         }
     }
   
     private var stackView: UIStackView!
-    private var countLabel: UILabel!
-    private var likeImageView: UIImageView!
+    private var shareLabel: UILabel!
+    private var shareImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,11 +42,11 @@ import UIKit
     }
     
     private func commonInit() {
-        countLabel = UILabel()
-        likeImageView = UIImageView()
-        likeImageView.contentMode = .scaleAspectFit
-        countLabel.textAlignment = .left
-        stackView = UIStackView(arrangedSubviews: [countLabel, likeImageView])
+        shareLabel = UILabel()
+        shareImageView = UIImageView()
+        shareImageView.contentMode = .scaleAspectFit
+        shareLabel.textAlignment = .left
+        stackView = UIStackView(arrangedSubviews: [shareLabel, shareImageView])
         addSubview(stackView)
         stackView.spacing = 0
         stackView.axis = .horizontal
@@ -55,15 +56,14 @@ import UIKit
     }
     
     private func updateLabelText() {
-        let additionalLike = isSelected ? 1 : 0
-        countLabel.text = "\(likeCount + additionalLike)"
+        shareLabel.text = "\(share)"
         
     }
     
     private func updateSelectionState() {
         let color = isSelected ? tintColor : .black
-        countLabel.textColor = color
-        likeImageView.tintColor = color
+        shareLabel.textColor = color
+        shareImageView.tintColor = color
         updateLabelText()
     }
     
@@ -72,5 +72,4 @@ import UIKit
         updateSelectionState()
         sendActions(for: .valueChanged)
     }
-    
 }

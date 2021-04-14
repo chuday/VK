@@ -1,41 +1,59 @@
 //
-//  UserTableViewController.swift
+//  NewsTableViewController.swift
 //  VK
 //
-//  Created by Михаил Чудаев on 11.03.2021.
+//  Created by Михаил Чудаев on 27.03.2021.
 //
 
 import UIKit
 
-class UserTableViewController: UITableViewController {
+struct news {
+    var avtor: String
+    var data: String
+    var textNews: String
+    var imageNews: UIImage
+    var imageAvtor: UIImage
+}
+
+class NewsTableViewController: UITableViewController {
     
-    struct User {
-        let nameUser: String
-        let age: Int
-        let sex: String
-        let image: String
-    }
+  
+    
+    private let cellReuseIdentifier = "NewsCell"
+    
+    var newsArray = [news]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+    
+        newsArray = [
+        news(avtor: "Olga", data: "10.02.2021", textNews: "Стивен Хилленберг придумал Губку Боба в середине 90-х, в то время он преподавал биологию в Калифорнийском институте океанологии. В свободное время он рисовал комиксы о весёлом подводном жителе. Выдуманного персонажа Хилленберг называл Мальчик-Губка (англ. — Sponge Boy),но был зарегистрирован за одним моющим средством. В результате аниматор-биолог переименовал своего героя в Губку Боба.", imageNews: #imageLiteral(resourceName: "f11"), imageAvtor: #imageLiteral(resourceName: "f9"))
+        ]
+        
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return newsArray.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
+        
+        let news = newsArray[indexPath.item]
+        cell.avtorLabel.text = "\(news.avtor)"
+        cell.dataLabel.text = "\(news.data)"
+        cell.textNews.text = "\(news.textNews)"
+        cell.imageNews.image = news.imageNews
+        cell.imageAvtor.image = news.imageAvtor
+        
+        return cell
     }
 
     /*

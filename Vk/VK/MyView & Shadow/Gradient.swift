@@ -68,5 +68,4 @@ import UIKit
     func updateEndPoint() {
         gradientLayer.endPoint = endPoint
     }
-    
 }
