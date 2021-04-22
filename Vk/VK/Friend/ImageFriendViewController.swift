@@ -23,6 +23,8 @@ class ImageFriendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkManager.shared.getDataVK(token: "token")
+
     }
 }
 
