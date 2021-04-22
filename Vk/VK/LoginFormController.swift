@@ -22,7 +22,10 @@ class LoginFormController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             self?.passwordInput.isSecureTextEntry = true
         }
+        
+       
     }
+    
     
    
     
@@ -62,8 +65,8 @@ class LoginFormController: UIViewController {
     }
     
     func checkUserData() -> Bool {
-        guard let login = loginInput.text,
-              let password = passwordInput.text else { return false }
+        guard let login = loginInput.text?.lowercased(),
+              let password = passwordInput.text?.lowercased() else { return false }
         if login == "admin" && password == "123456" {
             return true
         } else {
