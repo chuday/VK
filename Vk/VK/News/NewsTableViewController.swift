@@ -17,6 +17,8 @@ struct news {
 
 class NewsTableViewController: UITableViewController {
     
+    var vk = NetworkManager()
+
   
     
     private let cellReuseIdentifier = "NewsCell"
@@ -26,6 +28,14 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        vk.searchGroups(searchField: "orenburg_vk")
+//        vk.loadData(getData: "groups.get")
+//        vk.loadData(getData: "friends.get")
+//        vk.loadUserData(data: "users.get", userId: "136959229")
+//        vk.loadPhotoData(userId: "136959229")
+
+
+        
         
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
     
@@ -34,9 +44,6 @@ class NewsTableViewController: UITableViewController {
         ]
         
     }
-      
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -46,7 +53,6 @@ class NewsTableViewController: UITableViewController {
         return newsArray.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
         
@@ -57,7 +63,6 @@ class NewsTableViewController: UITableViewController {
         cell.imageNews.image = news.imageNews
         cell.imageAvtor.image = news.imageAvtor
         
-
         return cell
     }
 
