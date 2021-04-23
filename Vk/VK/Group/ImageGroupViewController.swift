@@ -14,6 +14,7 @@ struct ImageData {
 
 class ImageGroupViewController: UIViewController {
   
+//    let vk = NetworkManager()
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -25,6 +26,7 @@ class ImageGroupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        vk.searchGroups(searchField: "incred_world")
         
         imagesGroup = [
             ImageData(name: "people", info: "different people"),

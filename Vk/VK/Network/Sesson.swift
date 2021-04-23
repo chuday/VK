@@ -4,13 +4,11 @@
 //
 //  Created by Михаил Чудаев on 14.04.2021.
 //
-
 import UIKit
-
 
 class Session {
     
-    static let instance = Session()
+    static let shared = Session()
         
     private init(){}
     

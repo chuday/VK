@@ -20,10 +20,13 @@ class ImageFriendViewController: UIViewController {
     var friend: User?
     var selectedIndex = 0
 
+//    var vk = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.getDataVK(token: "token")
+//        NetworkManager.shared.getDataVK(token: "token")
+//        vk.loadPhotoData(userId: "136959229")
+//        vk.loadUserData(data: "users.get", userId: "136959229")
 
     }
 }

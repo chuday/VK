@@ -10,6 +10,8 @@ import WebKit
 
 class WKViewController: UIViewController {
 
+    var tokenVK: String?
+
     
     @IBOutlet weak var webView: WKWebView! {
         didSet{
@@ -65,17 +67,20 @@ extension WKViewController: WKNavigationDelegate {
                 return dict
         }
         
-       guard let token = params["access_token"],
-             let userIdString = params["user_id"],
-             let userId = Int(userIdString) else {
-        decisionHandler(.allow)
-        return
-       }
-        Session.instance.token = token
-        Session.instance.userId = userId
+//       guard let token = params["access_token"],
+//             let userIdString = params["user_id"],
+//             let userId = Int(userIdString) else {
+//        decisionHandler(.allow)
+//        return
+//       }
+//        Session.session.token = token
+//        Session.session.userId = userId
         
         
-        print("Access Token: \(token)")
+        tokenVK = params["access_token"]
+        Session.shared.token = tokenVK ?? ""        
+        
+        print("Access Token: \(tokenVK)")
         
         decisionHandler(.cancel)
         
