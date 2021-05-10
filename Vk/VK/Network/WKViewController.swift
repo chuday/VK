@@ -11,7 +11,7 @@ import WebKit
 class WKViewController: UIViewController {
 
     var tokenVK: String?
-
+    var mapping = NetworkManager()
     
     @IBOutlet weak var webView: WKWebView! {
         didSet{
@@ -66,25 +66,15 @@ extension WKViewController: WKNavigationDelegate {
                 dict[key] = value
                 return dict
         }
-        
-//       guard let token = params["access_token"],
-//             let userIdString = params["user_id"],
-//             let userId = Int(userIdString) else {
-//        decisionHandler(.allow)
-//        return
-//       }
-//        Session.session.token = token
-//        Session.session.userId = userId
-        
-        
+                
         tokenVK = params["access_token"]
-        Session.shared.token = tokenVK ?? ""        
+        Sessions.shared.token = tokenVK ?? ""        
         
         print("Access Token: \(tokenVK)")
         
         decisionHandler(.cancel)
         
         performSegue(withIdentifier: "go", sender: self)
-        
+            
     }
 }

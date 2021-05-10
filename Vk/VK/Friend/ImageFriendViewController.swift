@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 
 class ImageFriendViewController: UIViewController {
@@ -19,15 +21,21 @@ class ImageFriendViewController: UIViewController {
 
     var friend: User?
     var selectedIndex = 0
+    var photoMapp: [PhotoMapp] = []
 
-//    var vk = NetworkManager()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NetworkManager.shared.getDataVK(token: "token")
-//        vk.loadPhotoData(userId: "136959229")
-//        vk.loadUserData(data: "users.get", userId: "136959229")
-
+        
+            NetworkManager.shared.photoMapp(userPath: "photos.get") { [weak self] photoData in
+                        DispatchQueue.main.async {
+                            self?.photoMapp = photoData
+                            self?.collectionView.reloadData()
+                            print("Photo array: \(self?.photoMapp.map { $0.ownerId}) ")
+        
+                                  }
+                              }
     }
 }
 
@@ -35,6 +43,7 @@ extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return photoMapp.count
         return friend?.usersPhoto.count ?? 0
     }
     
