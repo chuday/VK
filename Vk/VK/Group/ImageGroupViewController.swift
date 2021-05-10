@@ -24,8 +24,7 @@ class ImageGroupViewController: UIViewController {
     var imagesGroup = [ImageData]()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         imagesGroup = [
             ImageData(name: "people", info: "different people"),
             ImageData(name: "animals", info: "dog"),

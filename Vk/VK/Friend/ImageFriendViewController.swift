@@ -6,11 +6,9 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
-struct FriendInfo {
-    var name: String
-    var image: UIImage
-}
 
 class ImageFriendViewController: UIViewController {
     
@@ -21,35 +19,51 @@ class ImageFriendViewController: UIViewController {
         }
     }
 
-    var friend = [FriendInfo]()
-    
+    var friend: User?
+    var selectedIndex = 0
+    var photoMapp: [PhotoMapp] = []
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        friend = [
-        FriendInfo(name: "Photo 1", image: #imageLiteral(resourceName: "f2")),
-        FriendInfo(name: "Photo 2", image: #imageLiteral(resourceName: "f5")),
-        FriendInfo(name: "Photo 3", image: #imageLiteral(resourceName: "f3")),
-        FriendInfo(name: "Photo 4", image: #imageLiteral(resourceName: "f4"))
-        ]
+        
+            NetworkManager.shared.photoMapp(userPath: "photos.get") { [weak self] photoData in
+                        DispatchQueue.main.async {
+                            self?.photoMapp = photoData
+                            self?.collectionView.reloadData()
+                            print("Photo array: \(self?.photoMapp.map { $0.ownerId}) ")
+        
+                                  }
+                              }
     }
 }
 
 extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friend.count
+//        return photoMapp.count
+        return friend?.usersPhoto.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageFriendCollectionViewCell
-        let friends = friend[indexPath.item]
-        cell.nameLabel.text = "\(friends.name)"
-        cell.imageFriend.image = friends.image
-    
+       
+        let photo = friend?.usersPhoto[indexPath.row]
+        cell.imageFriend.image = UIImage(named: photo!)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        performSegue(withIdentifier: "toDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SwipeImage {
+            destination.selectedIndex = selectedIndex
+            destination.usersPhoto = (friend?.usersPhoto)!
+        }
     }
 }

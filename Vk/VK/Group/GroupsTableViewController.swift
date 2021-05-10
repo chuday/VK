@@ -10,7 +10,7 @@ import UIKit
 class GroupsTableViewController: UITableViewController {
     var groups = [String]()
     var selectedGroup: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -55,13 +55,10 @@ class GroupsTableViewController: UITableViewController {
         }
     }
     
-
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             groups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
