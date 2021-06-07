@@ -8,7 +8,7 @@
 import UIKit
 
 class FriendsTableViewHeader: UITableViewHeaderFooterView {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {

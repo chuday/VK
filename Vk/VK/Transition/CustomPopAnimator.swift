@@ -32,21 +32,21 @@ final class CustomPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                                     UIView.addKeyframe(withRelativeStartTime: 0,
                                                        relativeDuration: 0.4,
                                                        animations: {
-                                                           let translation = CGAffineTransform(translationX: source.view.frame.width / 2, y: 600)
+                                                        let translation = CGAffineTransform(translationX: source.view.frame.width / 2, y: 600)
                                                         let rotation = CGAffineTransform(rotationAngle: 200)
-                                                           source.view.transform = translation.concatenating(rotation)
-                                    })
+                                                        source.view.transform = translation.concatenating(rotation)
+                                                       })
                                     UIView.addKeyframe(withRelativeStartTime: 0.4,
                                                        relativeDuration: 0.4,
                                                        animations: {
-                                                           source.view.transform = CGAffineTransform(translationX: source.view.frame.width, y: 0)
-                                    })
+                                                        source.view.transform = CGAffineTransform(translationX: source.view.frame.width, y: 0)
+                                                       })
                                     UIView.addKeyframe(withRelativeStartTime: 0.25,
                                                        relativeDuration: 0.75,
                                                        animations: {
-                                                           destination.view.transform = .identity
-                                    })
-        }) { finished in
+                                                        destination.view.transform = .identity
+                                                       })
+                                }) { finished in
             if finished && !transitionContext.transitionWasCancelled {
                 source.removeFromParent()
             } else if transitionContext.transitionWasCancelled {

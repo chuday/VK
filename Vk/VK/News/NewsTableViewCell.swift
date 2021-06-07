@@ -18,12 +18,12 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var textNews: UILabel!
     @IBOutlet weak var imageAvtor: UIImageView!
     @IBOutlet weak var imageNews: UIImageView!
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        avtorLabel.text = ""
-        dataLabel.text = ""
-        textNews.text = ""
-        imageView?.image = nil
+//        avtorLabel.text = ""
+//        dataLabel.text = ""
+//        textNews.text = ""
+//        imageView?.image = nil
     }
 }

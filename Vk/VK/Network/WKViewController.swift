@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 class WKViewController: UIViewController {
-
+    
     var tokenVK: String?
     var mapping = NetworkManager()
     
@@ -35,7 +35,8 @@ class WKViewController: UIViewController {
             URLQueryItem(name: "client_id", value: "7831130"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-            URLQueryItem(name: "scope", value: "262150"),
+//            URLQueryItem(name: "scope", value: "262150"),
+            URLQueryItem(name: "scope", value: "401502"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.68")
         ]
@@ -44,7 +45,6 @@ class WKViewController: UIViewController {
         
         webView.load(request)
     }
-
 }
 
 extension WKViewController: WKNavigationDelegate {
@@ -65,8 +65,8 @@ extension WKViewController: WKNavigationDelegate {
                 let value = param[1]
                 dict[key] = value
                 return dict
-        }
-                
+            }
+        
         tokenVK = params["access_token"]
         Sessions.shared.token = tokenVK ?? ""        
         
@@ -75,6 +75,6 @@ extension WKViewController: WKNavigationDelegate {
         decisionHandler(.cancel)
         
         performSegue(withIdentifier: "go", sender: self)
-            
+        
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginFormController: UIViewController {
-
+    
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -105,17 +105,17 @@ class LoginFormController: UIViewController {
         // первый способ
         loadScreen()
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
-                    self.performSegue(withIdentifier: "to", sender: self)
-                }
+            self.performSegue(withIdentifier: "to", sender: self)
+        }
         
         // второй способ
-//        UIView.animate(withDuration: 0.5, delay: 3, options: []) {
-//            self.loadScreen()
-//            self.passwordEye.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-//
-//        } completion: { completed in
-//            self.performSegue(withIdentifier: "to", sender: self)
-//        }
+        //        UIView.animate(withDuration: 0.5, delay: 3, options: []) {
+        //            self.loadScreen()
+        //            self.passwordEye.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        //
+        //        } completion: { completed in
+        //            self.performSegue(withIdentifier: "to", sender: self)
+        //        }
     }
     
     

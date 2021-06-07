@@ -8,14 +8,15 @@
 import UIKit
 
 
-@IBDesignable class CommentButton: UIControl {
+//@IBDesignable
+class CommentButton: UIControl {
     
     @IBInspectable var comment: String = "" {
         didSet {
-          updateLabelText()
+            updateLabelText()
         }
     }
-  
+    
     private var stackView: UIStackView!
     private var commentLabel: UILabel!
     
@@ -61,7 +62,7 @@ import UIKit
         updateSelectionState()
         sendActions(for: .valueChanged)
         textCommentChange()
-
+        
     }
     
     func textCommentChange() {
