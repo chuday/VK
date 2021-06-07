@@ -8,23 +8,24 @@
 import UIKit
 
 
-@IBDesignable class ShareButton: UIControl {
+//@IBDesignable
+class ShareButton: UIControl {
     
     @IBInspectable var share: String = "" {
         didSet {
-          updateLabelText()
+            updateLabelText()
         }
     }
     
-    @IBInspectable var likeImage: UIImage? = nil {
+    @IBInspectable var shareImage: UIImage? = nil {
         didSet {
-            likeImageView.image = likeImage
+            shareImageView.image = shareImage
         }
     }
-  
+    
     private var stackView: UIStackView!
     private var shareLabel: UILabel!
-    private var likeImageView: UIImageView!
+    private var shareImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,10 +44,10 @@ import UIKit
     
     private func commonInit() {
         shareLabel = UILabel()
-        likeImageView = UIImageView()
-        likeImageView.contentMode = .scaleAspectFit
+        shareImageView = UIImageView()
+        shareImageView.contentMode = .scaleAspectFit
         shareLabel.textAlignment = .left
-        stackView = UIStackView(arrangedSubviews: [shareLabel, likeImageView])
+        stackView = UIStackView(arrangedSubviews: [shareLabel, shareImageView])
         addSubview(stackView)
         stackView.spacing = 0
         stackView.axis = .horizontal
@@ -56,7 +57,6 @@ import UIKit
     }
     
     private func updateLabelText() {
-//        let additionalLike = isSelected ? 1 : 0
         shareLabel.text = "\(share)"
         
     }
@@ -64,7 +64,7 @@ import UIKit
     private func updateSelectionState() {
         let color = isSelected ? tintColor : .black
         shareLabel.textColor = color
-        likeImageView.tintColor = color
+        shareImageView.tintColor = color
         updateLabelText()
     }
     
@@ -73,5 +73,4 @@ import UIKit
         updateSelectionState()
         sendActions(for: .valueChanged)
     }
-    
 }

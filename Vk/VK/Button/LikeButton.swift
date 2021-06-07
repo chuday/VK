@@ -7,11 +7,12 @@
 
 import UIKit
 
-@IBDesignable class LikeButton: UIControl {
+//@IBDesignable
+class LikeButton: UIControl {
     
     @IBInspectable var likeCount: Int = 0 {
         didSet {
-          updateLabelText()
+            updateLabelText()
         }
     }
     
@@ -20,7 +21,7 @@ import UIKit
             likeImageView.image = likeImage
         }
     }
-  
+    
     private var stackView: UIStackView!
     private var countLabel: UILabel!
     private var likeImageView: UIImageView!
@@ -72,5 +73,4 @@ import UIKit
         updateSelectionState()
         sendActions(for: .valueChanged)
     }
-    
 }
