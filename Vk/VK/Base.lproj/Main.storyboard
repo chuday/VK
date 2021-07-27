@@ -366,6 +366,7 @@
                     <navigationItem key="navigationItem" id="Bfz-of-gqO"/>
                     <connections>
                         <outlet property="collectionView" destination="Xvi-YT-TZ3" id="p53-V9-W7o"/>
+                        <segue destination="8m5-kQ-AeC" kind="presentation" identifier="toDetail" id="K0n-gn-QFr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKQ-Mh-KEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -562,7 +563,7 @@
         <!--Group-->
         <scene sceneID="Azj-5s-83d">
             <objects>
-                <navigationController id="6WF-rQ-yGQ" sceneMemberID="viewController">
+                <navigationController id="6WF-rQ-yGQ" customClass="CustomNavigationController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Group" image="person.3.fill" catalog="system" id="UTi-CC-BGl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jBy-ek-LBj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -660,6 +661,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kg5-bf-uey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="594" y="830"/>
+        </scene>
+        <!--Swipe Image-->
+        <scene sceneID="xGq-EO-eKK">
+            <objects>
+                <viewController id="8m5-kQ-AeC" customClass="SwipeImage" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2H-HC-eTp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yii-wH-u2x">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f7g-6i-5UA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f7g-6i-5UA" firstAttribute="trailing" secondItem="Yii-wH-u2x" secondAttribute="trailing" id="P0U-Z6-T2d"/>
+                            <constraint firstItem="Yii-wH-u2x" firstAttribute="leading" secondItem="f7g-6i-5UA" secondAttribute="leading" id="WYt-nc-0tO"/>
+                            <constraint firstItem="f7g-6i-5UA" firstAttribute="bottom" secondItem="Yii-wH-u2x" secondAttribute="bottom" id="YLv-Cf-qxQ"/>
+                            <constraint firstItem="Yii-wH-u2x" firstAttribute="top" secondItem="f7g-6i-5UA" secondAttribute="top" id="oSS-om-DJe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="54c-QO-nHb"/>
+                    <connections>
+                        <outlet property="detailPhoto" destination="Yii-wH-u2x" id="1ZO-s8-96D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCw-kC-hUK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4042" y="-228"/>
         </scene>
     </scenes>
     <resources>

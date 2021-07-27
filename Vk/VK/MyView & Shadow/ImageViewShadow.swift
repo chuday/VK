@@ -28,5 +28,4 @@ import UIKit
             layer.shadowOffset = shadowOffset
         }
     }
-    
 }

@@ -72,5 +72,4 @@ import UIKit
         updateSelectionState()
         sendActions(for: .valueChanged)
     }
-    
 }

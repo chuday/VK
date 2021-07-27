@@ -18,6 +18,8 @@ class ImageFriendViewController: UIViewController {
     }
 
     var friend: User?
+    var selectedIndex = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,6 @@ class ImageFriendViewController: UIViewController {
 
 extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friend?.usersPhoto.count ?? 0
@@ -39,7 +38,18 @@ extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewD
        
         let photo = friend?.usersPhoto[indexPath.row]
         cell.imageFriend.image = UIImage(named: photo!)
-    
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        performSegue(withIdentifier: "toDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SwipeImage {
+            destination.selectedIndex = selectedIndex
+            destination.usersPhoto = (friend?.usersPhoto)!
+        }
     }
 }

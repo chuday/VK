@@ -34,9 +34,6 @@ class NewsTableViewController: UITableViewController {
         ]
         
     }
-      
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -46,7 +43,6 @@ class NewsTableViewController: UITableViewController {
         return newsArray.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
         
@@ -57,7 +53,6 @@ class NewsTableViewController: UITableViewController {
         cell.imageNews.image = news.imageNews
         cell.imageAvtor.image = news.imageAvtor
         
-
         return cell
     }
 

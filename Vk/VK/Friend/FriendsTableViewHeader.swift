@@ -13,7 +13,6 @@ class FriendsTableViewHeader: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        let view = UIView()
         
         let view = GradientView()
         view.colorStart = .green
@@ -23,8 +22,6 @@ class FriendsTableViewHeader: UITableViewHeaderFooterView {
         
         backgroundView = view
         self.backgroundView?.layer.opacity = 0.3
-        
-        
     }
     
     func configure(text:String) {
@@ -35,5 +32,4 @@ class FriendsTableViewHeader: UITableViewHeaderFooterView {
         super.prepareForReuse()
         titleLabel.text = nil
     }
-    
 }
