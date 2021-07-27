@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import RealmSwift
 
 
 class ImageFriendViewController: UIViewController {
@@ -18,40 +19,44 @@ class ImageFriendViewController: UIViewController {
             collectionView.dataSource = self
         }
     }
-
+    
     var friend: User?
     var selectedIndex = 0
-    var photoMapp: [PhotoMapp] = []
+    var photoVK: [PhotoVK] = []
 
-
-
+    var photo: String = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-            NetworkManager.shared.photoMapp(userPath: "photos.get") { [weak self] photoData in
-                        DispatchQueue.main.async {
-                            self?.photoMapp = photoData
-                            self?.collectionView.reloadData()
-                            print("Photo array: \(self?.photoMapp.map { $0.ownerId}) ")
-        
-                                  }
-                              }
+ 
+        NetworkManager.shared.photoVK(userPath: "photos.get") { [weak self] photoData in
+            DispatchQueue.main.async {
+                self?.photoVK = photoData
+                self?.collectionView.reloadData()
+//                print("Photo array: \(self?.photoVK.map { $0.ownerId }) ")
+            }
+        }
     }
 }
+
 
 extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return photoMapp.count
-        return friend?.usersPhoto.count ?? 0
+        return photoVK.count
+        //        return friend?.usersPhoto.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageFriendCollectionViewCell
-       
-        let photo = friend?.usersPhoto[indexPath.row]
-        cell.imageFriend.image = UIImage(named: photo!)
+        
+        let photo = photoVK[indexPath.row]
+        //        let photo = friend?.usersPhoto[indexPath.row]
+        cell.imageFriend.af.setImage(withURL: URL(string: photo.sizes.last?.url ?? "")!)
+        //        cell.imageFriend.image = UIImage(named: photo!)
         return cell
     }
     
@@ -63,7 +68,8 @@ extension ImageFriendViewController: UICollectionViewDelegate, UICollectionViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SwipeImage {
             destination.selectedIndex = selectedIndex
-            destination.usersPhoto = (friend?.usersPhoto)!
+            destination.usersPhoto = photoVK
+            //            destination.usersPhoto = (friend?.usersPhoto)!
         }
     }
 }

@@ -27,7 +27,7 @@ class AvatarImage: UIImageView {
         super.touchesBegan(touches, with: event)
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction]) {
             self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        
+            
         } completion: { completed in
             
         }
@@ -38,7 +38,7 @@ class AvatarImage: UIImageView {
         
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction]) {
             self.transform = .identity
-        
+            
         } completion: { completed in
             
         }
@@ -49,7 +49,7 @@ class AvatarImage: UIImageView {
         
         UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction]) {
             self.transform = .identity
-        
+            
         } completion: { completed in
             
         }

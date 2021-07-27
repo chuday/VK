@@ -8,11 +8,12 @@
 import UIKit
 
 
-@IBDesignable class ShareButton: UIControl {
+//@IBDesignable
+class ShareButton: UIControl {
     
     @IBInspectable var share: String = "" {
         didSet {
-          updateLabelText()
+            updateLabelText()
         }
     }
     
@@ -21,7 +22,7 @@ import UIKit
             shareImageView.image = shareImage
         }
     }
-  
+    
     private var stackView: UIStackView!
     private var shareLabel: UILabel!
     private var shareImageView: UIImageView!

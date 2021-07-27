@@ -8,9 +8,9 @@
 import UIKit
 
 class GroupTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = ""
