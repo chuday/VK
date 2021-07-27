@@ -12,6 +12,20 @@ class WKViewController: UIViewController {
     
     var tokenVK: String?
     var mapping = NetworkManager()
+    struct AuthScope: OptionSet {
+        let rawValue: Int
+
+        static let friend    = AuthScope(rawValue: 1 << 1)
+        static let photos  = AuthScope(rawValue: 1 << 2)
+        static let wall   = AuthScope(rawValue: 1 << 13)
+        static let offline   = AuthScope(rawValue: 1 << 16)
+        static let groups   = AuthScope(rawValue: 1 << 18)
+
+        static let all: AuthScope = [.friend, .photos, .wall, .offline, .groups]
+    }
+
+    
+
     
     @IBOutlet weak var webView: WKWebView! {
         didSet{
@@ -35,8 +49,8 @@ class WKViewController: UIViewController {
             URLQueryItem(name: "client_id", value: "7831130"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-//            URLQueryItem(name: "scope", value: "262150"),
-            URLQueryItem(name: "scope", value: "401502"),
+//            URLQueryItem(name: "scope", value: "401502"),
+            URLQueryItem(name: "scope", value: "\(AuthScope.all.rawValue)"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.68")
         ]
@@ -70,7 +84,7 @@ extension WKViewController: WKNavigationDelegate {
         tokenVK = params["access_token"]
         Sessions.shared.token = tokenVK ?? ""        
         
-        print("Access Token: \(tokenVK)")
+//        print("Access Token: \(tokenVK)")
         
         decisionHandler(.cancel)
         

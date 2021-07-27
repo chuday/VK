@@ -15,8 +15,12 @@ class VKAutorTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        postImage?.image = nil
+//        autorPost.text = ""
+//        dataPost.text = ""
+//    }
 }

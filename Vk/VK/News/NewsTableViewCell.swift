@@ -19,11 +19,28 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var imageAvtor: UIImageView!
     @IBOutlet weak var imageNews: UIImageView!
     
+    
+    static let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yyyy HH.mm"
+        return df
+    }()
+    
+    func configure(newsVK: NewsVK) {
+        
+        let date = Date(timeIntervalSince1970: newsVK.date)
+        let stringDate = NewsTableViewCell.dateFormatter.string(from: date)
+        
+        dataLabel.text = stringDate
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-//        avtorLabel.text = ""
-//        dataLabel.text = ""
-//        textNews.text = ""
-//        imageView?.image = nil
+        avtorLabel.text = ""
+        dataLabel.text = ""
+        textNews.text = ""
+        imageView?.image = nil
     }
+    
+    
 }

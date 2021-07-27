@@ -5,37 +5,116 @@
 //  Created by Михаил Чудаев on 06.06.2021.
 //
 
-import Foundation
-import RealmSwift
+import UIKit
+//import Foundation
+//import RealmSwift
 
-class NewsVKResponce: Decodable {
-    let response: NewsVK
+class NewsVKResponce: Codable {
+    let response: News
 }
 
-class News: Decodable {
-    let items: [NewsVK]
+class News: Codable {
+    let items: [NewsVK] 
 }
 
-class NewsVK: Decodable {
-
-    var firstName: String = ""
-    var lastName: String = ""
-    var avatar: String = ""
-    var id: Int = 0
+class NewsVK: Codable {
+    var postID: Int
+    var text: String
+    var date: Double
+    var attachments: [Attachment]?
+    var likes: LikeModel
+    var comments: CommentModel
+    var sourceID: Int
+    var avatarURL: String?
+    var creatorName: String?
+    var photosURL: [String]? {
+        get {
+            let photosURL = attachments?.compactMap{ $0.photo?.sizes?.last?.url }
+            return photosURL
+        }
+    }
+    
+    var newsInfo: String = ""
     
     enum CodingKeys: String, CodingKey {
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case avatar = "photo_50"
-        case id
+        case postID = "post_id"
+        case text
+        case date
+        case likes
+        case comments
+        case attachments
+        case sourceID = "source_id"
+        case avatarURL
+        case creatorName
+    }
+
+
+    class Attachment: Codable {
+        let type: String?
+        let photo: PhotoNews?
+    }
+    class LikeModel: Codable {
+        let count: Int
+    }
+    class CommentModel: Codable {
+        let count: Int
     }
     
-    convenience required init(from decoder: Decoder) throws {
-        self.init()
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        self.firstName = try values.decode(String.self, forKey: .firstName)
-        self.lastName = try values.decode(String.self, forKey: .lastName)
-        self.id = try values.decode(Int.self, forKey: .id)
-        self.avatar = try values.decode(String.self, forKey: .avatar)
+    
+    class PhotoNews: Codable {
+        let id: Int?
+        let ownerID: Int?
+        let sizes: [SizeNews]?
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case ownerID = "owner_id"
+            case sizes
+        }
     }
+    
+    class SizeNews: Codable {
+        let type: String?
+        let url: String?
+    }
+
+    
+    class ItemsNews: Codable {
+        let items: [NewsVK]
+        let profiles: [ProfileNews]
+        let groups: [GroupNews]
+        let nextFrom: String
+        
+        enum CodingKeys: String, CodingKey {
+            case items
+            case profiles
+            case groups
+            case nextFrom = "next_from"
+        }
+    }
+    class ProfileNews: Codable {
+        let id: Int
+        let firstName: String
+        let lastName: String
+        let avatarURL: String
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case firstName = "first_name"
+            case lastName = "last_name"
+            case avatarURL = "photo_100"
+        }
+    }
+    class GroupNews: Codable {
+        let id: Int
+        let name: String
+        let avatarURL: String
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case name
+            case avatarURL = "photo_100"
+        }
+    }
+
 }

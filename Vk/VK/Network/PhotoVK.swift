@@ -32,7 +32,9 @@ class PhotoVK: Decodable {
     //    @objc dynamic var id: Int = 0
     
     // 6
-    @objc dynamic var photoInfo: String = ""
+//    @objc dynamic var photoInfo: String = ""
+    var photoInfo: String = ""
+
     
     enum CodingKeys: String, CodingKey {
         case albumId = "album_id"

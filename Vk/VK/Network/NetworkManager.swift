@@ -8,9 +8,10 @@
 import Foundation
 import Alamofire
 import AlamofireImage
-import RealmSwift
 
 class NetworkManager {
+    
+    let dispatchGroup = DispatchGroup()
     
     static let shared = NetworkManager()
     
@@ -26,22 +27,7 @@ class NetworkManager {
         
         let url = baseUrl+path
         AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-            print(response.value ?? "")
-        }
-    }
-    
-    func loadUserData(data: String, userId: String){
-        let path = "/method/" + data
-        let methodName: Parameters = [
-            "user_ids": userId,
-            "fields": "bdate",
-            "access_token": apiKey,
-            "v": "5.130"
-        ]
-        
-        let url = baseUrl+path
-        AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-            print(response.value ?? "")
+//            print(response.value ?? "")
         }
     }
     
@@ -53,31 +39,34 @@ class NetworkManager {
             "access_token": apiKey,
             "v": "5.130"
         ]
-        
+
         let url = baseUrl+path
         AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-            print(response.value ?? "")
+//            print(response.value ?? "")
         }
     }
     
-    
-    /////////////// ///
-    func loadNewsVKData(userPath: String ) {
+    func loadNewsVKData(userPath: String, completion: @escaping ([NewsVK]) -> Void  ) {
+        
         let path = "/method/newsfeed.get"
         let methodName: Parameters = [
             "filters": "post",
             "start_from": "next_from",
-            "count": "3",
+            "count": "5",
             "access_token": apiKey,
             "v": "5.103"
-            ]
+        ]
         
         let url = baseUrl+path
-        AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-            print(response.value ?? "")
+        AF.request(url, method: .get, parameters: methodName).responseData { response in
+            guard let data = response.value else { return }
+//            let newsArray = try! JSONDecoder().decode(NewsVKResponce.self, from: data)
+            guard let newsArray = try? JSONDecoder().decode(NewsVKResponce.self, from: data) else { return }
+            
+//            newsArray.response.items.forEach { print( $0.postID )}
+            completion(newsArray.response.items)
         }
     }
-    
     
     
     func searchGroups(searchField: String){
@@ -92,7 +81,7 @@ class NetworkManager {
         
         let url = baseUrl+path
         AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-            print(response.value ?? "")
+//            print(response.value ?? "")
         }
     }
     
@@ -107,29 +96,13 @@ class NetworkManager {
         ]
         
         let url = baseUrl+path
-        
-        // 6
-        AF.request(url, method: .get, parameters: methodName).responseData { [ weak self ] response in
+        AF.request(url, method: .get, parameters: methodName).responseData { response in
             guard let data = response.value else { return }
-            let userArray = try! JSONDecoder().decode(FriendsResponce.self, from: data)
-            userArray.response.items.forEach { $0.friendInfo = userPath }
-            //            self?.clearFriendsData()
-            self?.saveFriendData(userArray.response.items, friendInfo: userPath)
+//            let userArray = try! JSONDecoder().decode(FriendsResponce.self, from: data)
+            guard let userArray = try? JSONDecoder().decode(FriendsResponce.self, from: data) else {return}
+
+//            userArray.response.items.forEach { print($0.friendInfo = userPath) }
             completion(userArray.response.items)
-        }
-    }
-    
-    // 6
-    func saveFriendData(_ friends: [FriendsVK], friendInfo: String) {
-        do {
-            let realm = try Realm()
-            let oldFriends = realm.objects(FriendsVK.self).filter("friendInfo ==%@", friendInfo)
-            realm.beginWrite()
-            realm.delete(oldFriends)
-            realm.add(friends)
-            try realm.commitWrite()
-        } catch {
-            print(error)
         }
     }
     
@@ -146,37 +119,15 @@ class NetworkManager {
         ]
         
         let url = baseUrl+path
-        AF.request(url, method: .get, parameters: methodName).responseData { [ weak self ] response in
+        AF.request(url, method: .get, parameters: methodName).responseData { response in
             guard let data = response.value else { return }
-            let userArray = try! JSONDecoder().decode(GroupssResponce.self, from: data)
-            self?.clearGroupData()
-            self?.saveGroupData(userArray.response.items)
+            
+//            let userArray = try! JSONDecoder().decode(GroupssResponce.self, from: data)
+            guard let userArray = try? JSONDecoder().decode(GroupssResponce.self, from: data) else { return }
             completion(userArray.response.items)
         }
     }
-    
-    func clearGroupData() {
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.deleteAll()
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func saveGroupData(_ group: [GroupVK]) {
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(group)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
+
     func photoVK(userPath: String, completion: @escaping ([PhotoVK]) -> Void){
         let path = "/method/" + userPath
         let methodName: Parameters = [
@@ -189,30 +140,15 @@ class NetworkManager {
         ]
         
         let url = baseUrl+path
-        
-        // 6
-        AF.request(url, method: .get, parameters: methodName).responseData { [ weak self ] response in
+        AF.request(url, method: .get, parameters: methodName).responseData { response in
             guard let data = response.value else { return }
-            let userArray = try! JSONDecoder().decode(PhotosResponce.self, from: data)
+//            let userArray = try! JSONDecoder().decode(PhotosResponce.self, from: data)
+            guard let userArray = try? JSONDecoder().decode(PhotosResponce.self, from: data) else { return }
             
-            userArray.response.items.forEach{ $0.photoInfo = userPath}
-            //            self?.savePhotoData(userArray.response.items, photoInfo: userPath)
+//            userArray.response.items.forEach{ print($0.photoInfo = userPath)}
             completion(userArray.response.items)
         }
     }
-    
-    //    func savePhotoData(_ photo: [PhotoVK], photoInfo: String) {
-    //        do {
-    //            let realm = try Realm()
-    //            let oldPhoto = realm.objects(PhotoVK.self).filter("photoInfo ==%@", photoInfo)
-    //            realm.beginWrite()
-    //            realm.delete(oldPhoto)
-    //            realm.add(photo)
-    //            try realm.commitWrite()
-    //        } catch {
-    //            print(error)
-    //        }
-    //    }
 }
 
 

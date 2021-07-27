@@ -23,51 +23,22 @@ class ImageFriendViewController: UIViewController {
     var friend: User?
     var selectedIndex = 0
     var photoVK: [PhotoVK] = []
-    
-    // 6
+
     var photo: String = ""
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         NetworkManager.shared.photoVK(userPath: "photos.get") { [weak self] photoData in
             DispatchQueue.main.async {
                 self?.photoVK = photoData
                 self?.collectionView.reloadData()
-                print("Photo array: \(self?.photoVK.map { $0.ownerId }) ")
-                
+//                print("Photo array: \(self?.photoVK.map { $0.ownerId }) ")
             }
         }
-        // 6
-        //        loadPhotoDataFromRealm()
-        ////        let cachedFriend = loadDataFromRealm()
-        ////        if cachedFriend.isEmpty {
-        //        collectionView.reloadData()
-        //        NetworkManager.shared.friendVK(userPath: "photos.get") { [weak self] _ in
-        //            DispatchQueue.main.async {
-        ////                self?.friendsMap = friendData
-        //                self?.loadPhotoDataFromRealm()
-        ////                self?.tableView.reloadData()
-        ////                print("Friends array: \(self?.friendsVK.map { $0.firstName + " " + $0.lastName }) ")
-        //                    }
-        //                }
     }
-    
-    // 6
-    //    func loadPhotoDataFromRealm() {
-    //        do {
-    //            let realm = try Realm()
-    //            print(realm.configuration.fileURL)
-    //            let photo = realm.objects(PhotoVK.self)
-    //            self.photoMapp = Array(photo)
-    //        } catch {
-    //            print(error.localizedDescription)
-    //        }
-    //        self.collectionView.reloadData()
-    //
-    //    }
 }
 
 

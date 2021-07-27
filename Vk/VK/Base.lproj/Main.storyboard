@@ -654,7 +654,7 @@
             <objects>
                 <tableViewController id="sUT-fC-4H1" customClass="NewsTableViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Du6-n6-QPa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -676,7 +676,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LvV-F1-9eW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="1546"/>
+            <point key="canvasLocation" x="1503" y="1572"/>
         </scene>
         <!--New's-->
         <scene sceneID="zz8-6q-Ckp">
@@ -690,7 +690,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tOc-A5-DKC" kind="relationship" relationship="rootViewController" id="g7w-CD-ggK"/>
+                        <segue destination="sUT-fC-4H1" kind="relationship" relationship="rootViewController" id="l4N-bp-5lG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kg5-bf-uey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -727,12 +727,12 @@
             </objects>
             <point key="canvasLocation" x="4042" y="-228"/>
         </scene>
-        <!--News Table View Controller-->
+        <!--  -->
         <scene sceneID="EU1-Ao-zcY">
             <objects>
                 <tableViewController id="tOc-A5-DKC" customClass="VKNewsTableViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5K0-wz-rR6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -751,29 +751,29 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lS-JZ-U4W">
-                                            <rect key="frame" x="120" y="10" width="40" height="21"/>
+                                            <rect key="frame" x="78" y="10" width="40" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocF-gx-0wa">
-                                            <rect key="frame" x="120" y="21.5" width="34" height="21"/>
+                                            <rect key="frame" x="78" y="21.5" width="34" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ocF-gx-0wa" secondAttribute="trailing" constant="10" id="7eL-aS-Sxn"/>
                                         <constraint firstItem="jGr-9t-ey5" firstAttribute="centerY" secondItem="jrf-Li-oMj" secondAttribute="centerY" id="9uU-7J-QVF"/>
-                                        <constraint firstItem="1lS-JZ-U4W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jGr-9t-ey5" secondAttribute="trailing" symbolic="YES" id="AbR-l3-dLb"/>
-                                        <constraint firstItem="ocF-gx-0wa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jGr-9t-ey5" secondAttribute="trailing" constant="8" symbolic="YES" id="Bvh-Pd-dWO"/>
+                                        <constraint firstItem="1lS-JZ-U4W" firstAttribute="leading" secondItem="jGr-9t-ey5" secondAttribute="trailing" constant="8" symbolic="YES" id="AbR-l3-dLb"/>
+                                        <constraint firstItem="ocF-gx-0wa" firstAttribute="leading" secondItem="jGr-9t-ey5" secondAttribute="trailing" constant="8" symbolic="YES" id="Bvh-Pd-dWO"/>
                                         <constraint firstItem="jGr-9t-ey5" firstAttribute="top" secondItem="jrf-Li-oMj" secondAttribute="top" constant="1" id="CY6-RP-9uY"/>
-                                        <constraint firstAttribute="trailing" secondItem="1lS-JZ-U4W" secondAttribute="trailing" constant="254" id="Ydp-Wh-mPZ"/>
                                         <constraint firstAttribute="bottom" secondItem="ocF-gx-0wa" secondAttribute="bottom" constant="10" id="coc-kL-LL0"/>
-                                        <constraint firstAttribute="trailing" secondItem="ocF-gx-0wa" secondAttribute="trailing" constant="260" id="dy8-29-c8e"/>
                                         <constraint firstItem="1lS-JZ-U4W" firstAttribute="top" secondItem="jrf-Li-oMj" secondAttribute="top" constant="10" id="s9q-Px-IJz"/>
                                         <constraint firstItem="jGr-9t-ey5" firstAttribute="leading" secondItem="jrf-Li-oMj" secondAttribute="leading" constant="20" id="ucn-uh-NDX"/>
                                         <constraint firstAttribute="bottom" secondItem="jGr-9t-ey5" secondAttribute="bottom" constant="1" id="wRX-BE-hNp"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1lS-JZ-U4W" secondAttribute="trailing" constant="10" id="wxD-XK-AM6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -791,7 +791,11 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlJ-UK-W8a">
                                             <rect key="frame" x="10" y="2" width="402" height="96"/>
-                                            <string key="text">В-третьих, поскольку ваша динамическая ячейка содержит UITextView, вам нужно убедиться, что она будет расти вместе с текстом. Это не происходит автоматически. Чтобы добиться этого, основываясь на этом ответе, этого должно быть достаточно (в ячейке):if indexPath.row == 0</string>
+                                            <string key="text">likes — количество отметок Мне нравится и информация о том, поставил ли лайк текущий пользователь;
+comments — количество комментариев к фотографии;
+tags — количество отметок на фотографии;
+can_comment — может ли текущий пользователь комментировать фото (1 — может, 0 — не может);
+reposts — число репостов фотографии.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -804,6 +808,9 @@
                                         <constraint firstAttribute="bottom" secondItem="PlJ-UK-W8a" secondAttribute="bottom" constant="2" id="reI-4f-gUZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textPost" destination="PlJ-UK-W8a" id="79V-5u-2he"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellImagePost" rowHeight="350" id="8gR-ap-fmo" customClass="VKImagePostTableViewCell" customModule="VK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="177" width="414" height="350"/>
@@ -883,15 +890,15 @@
                             <outlet property="delegate" destination="tOc-A5-DKC" id="gYq-g8-Pil"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WDZ-FX-H42"/>
+                    <navigationItem key="navigationItem" title="  " id="WDZ-FX-H42"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0C-WB-AZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="1546"/>
+            <point key="canvasLocation" x="677" y="1572"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yr8-JC-2WA"/>
+        <segue reference="gsW-dm-GhN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1.circle" catalog="system" width="128" height="121"/>
