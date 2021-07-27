@@ -17,6 +17,8 @@ struct news {
 
 class NewsTableViewController: UITableViewController {
     
+    var vk = NetworkManager()
+
   
     
     private let cellReuseIdentifier = "NewsCell"
@@ -25,6 +27,14 @@ class NewsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        vk.searchGroups(searchField: "orenburg_vk")
+//        vk.loadData(getData: "groups.get")
+//        vk.loadData(getData: "friends.get")
+//        vk.loadUserData(data: "users.get", userId: "136959229")
+//        vk.loadPhotoData(userId: "136959229")
+
+
         
         
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
