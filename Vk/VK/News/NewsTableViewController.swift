@@ -24,17 +24,50 @@ class NewsTableViewController: UITableViewController {
     private let cellReuseIdentifier = "NewsCell"
     
     var newsArray = [news]()
+    
+    var friendsMap: [FriendsMap] = []
+    var groupMapp: [GroupMapp] = []
+    var photoMapp: [PhotoMapp] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+//         Запуск Mapp 3й урок
+        
+        
+//       NetworkManager.shared.userMapp(userPath: "friends.get") { [weak self] friendData in
+//            DispatchQueue.main.async {
+//                self?.friendsMap = friendData
+//            print("Friends array: \(self?.friendsMap.map { $0.firstName + " " + $0.lastName }) ")
+//
+//            }
+//        }
+        
+//       NetworkManager.shared.groupMapp(userPath: "groups.get") { [weak self] groupData in
+//                    DispatchQueue.main.async {
+//                        self?.groupMapp = groupData
+//                        print("Group array: \(self?.groupMapp.map { $0.name}) ")
+//
+//                    }
+//                }
+
+//        NetworkManager.shared.photoMapp(userPath: "photos.get") { [weak self] photoData in
+//                          DispatchQueue.main.async {
+//                              self?.photoMapp = photoData
+//                            print("Photo array: \(self?.photoMapp.map { $0.id}) ")
+//
+//                          }
+//                      }
+        
+        
         
 //        vk.searchGroups(searchField: "orenburg_vk")
 //        vk.loadData(getData: "groups.get")
 //        vk.loadData(getData: "friends.get")
 //        vk.loadUserData(data: "users.get", userId: "136959229")
-//        vk.loadPhotoData(userId: "136959229")
-
-
+        vk.loadPhotoData(userId: "136959229")
         
         
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)

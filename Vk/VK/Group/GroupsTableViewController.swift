@@ -11,13 +11,8 @@ class GroupsTableViewController: UITableViewController {
     var groups = [String]()
     var selectedGroup: String?
     
-//    let vk = NetworkManager()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        vk.loadData(getData: "groups.get")
-//        vk.searchGroups(searchField: "orenburg_vk")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

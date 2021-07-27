@@ -6,16 +6,13 @@
 //
 import UIKit
 
-class Session {
+class Sessions {
     
-    static let shared = Session()
+    static let shared = Sessions()
         
     private init(){}
     
     var token = ""
     var userId = 0
    
-//     "85784ba26a0e629f6d5bf9673b45399a79ad4c3cdbb48d18d42f7148e027e9978a202fa11e0f1a6351c2b"
 }
-
-
