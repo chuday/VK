@@ -6,27 +6,35 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupsTableViewController: UITableViewController {
     var groups = [String]()
     var selectedGroup: String?
+    var groupVK: [GroupVK] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
+//        return groupVK.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GroupTableViewCell
         let group = groups[indexPath.row]
         cell.titleLabel.text = group
+        
+//        let groupVK = groupVK[indexPath.row]
+//        cell.titleLabel.text = "name?"
+        
         return cell
     }
     
@@ -52,6 +60,7 @@ class GroupsTableViewController: UITableViewController {
         if segue.identifier == "toGroup",
            let destination = segue.destination as? ImageGroupViewController {
             destination.title = selectedGroup
+            
         }
     }
     
