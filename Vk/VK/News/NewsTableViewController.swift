@@ -13,15 +13,17 @@ struct news {
     var textNews: String
     var imageNews: UIImage
     var imageAvtor: UIImage
+    
 }
 
 class NewsTableViewController: UITableViewController {
     
+    let dispatchGroup = DispatchGroup()
+    
     private let cellReuseIdentifier = "NewsCell"
     var newsArray = [news]()
-    var friendsVK: [FriendsVK] = []
-    var groupVK: [GroupVK] = []
-    var photoVK: [PhotoVK] = []
+    
+    
     
     var vk = NetworkManager()
     
@@ -33,17 +35,42 @@ class NewsTableViewController: UITableViewController {
         return df
     }()
     
+    private func getNewsData() {
+        NetworkManager.shared.loadNewsVKData(userPath: "newsfeed.get") { [ weak self ] newsData in
+            DispatchQueue.main.async {
+
+                self?.newsVKArray = newsData
+                
+                print("Response likes: \(self?.newsVKArray.map {$0.likes.count})")
+                print("Response comments: \(self?.newsVKArray.map {$0.comments.count})")
+
+
+                self?.tableView.reloadData()
+                
+                
+                
+            }
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            print(self.newsVKArray)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.shared.loadNewsVKData(userPath: "newsfeed.get") { [ weak self ] newsData in
-            DispatchQueue.main.async {
-                self?.newsVKArray = newsData
-                self?.tableView.reloadData()
-            }
-        }
+        getNewsData()
         
-                
+        
+//                NetworkManager.shared.loadNewsVKData(userPath: "newsfeed.get") { [ weak self ] newsData in
+//                    DispatchQueue.main.async {
+//                        self?.newsVKArray = newsData
+//                        self?.tableView.reloadData()
+//                    }
+//                }
+        
+        
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         
         newsArray = [
@@ -62,20 +89,21 @@ class NewsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsVKArray.count
-//        return newsArray.count
+        //        return newsArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! NewsTableViewCell
         
         let newsInfo = newsVKArray[indexPath.item]
         cell.textNews?.text = newsInfo.text
-        cell.avtorLabel?.text = newsInfo.creatorName
+        cell.avtorLabel?.text = newsInfo.text
         cell.configure(newsVK: newsInfo)
-        
+
 //        cell.imageAvtor.af.setImage(withURL: URL(string: newsInfo.avatarURL ?? "")!)
-//         cell.imageNews.af.setImage(withURL: URL(string: newsInfo.photosURL?.first ?? "" )!)
-        
+//        cell.imageNews.af.setImage(withURL: URL(string: newsInfo.photosURL?.first ?? "" )!)
         
         return cell
     }

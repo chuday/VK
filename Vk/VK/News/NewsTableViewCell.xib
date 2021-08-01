@@ -31,15 +31,14 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AutorLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxk-yV-qUj">
-                        <rect key="frame" x="65" y="9" width="247" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="65" y="15" width="247" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DataLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmt-ZH-lFn">
-                        <rect key="frame" x="65" y="32" width="247" height="12"/>
+                        <rect key="frame" x="65" y="34" width="247" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TextNews" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-Kb-EoI">
@@ -129,7 +128,7 @@
                     <constraint firstItem="ln2-S4-fHJ" firstAttribute="top" secondItem="jsh-29-4IO" secondAttribute="bottom" constant="8" id="xJ1-fz-CFy"/>
                     <constraint firstAttribute="trailing" secondItem="jxk-yV-qUj" secondAttribute="trailing" constant="8" id="xca-bv-72n"/>
                     <constraint firstItem="vmt-ZH-lFn" firstAttribute="leading" secondItem="aUh-iD-FVS" secondAttribute="trailing" constant="16" id="yL7-Eo-QJd"/>
-                    <constraint firstItem="jxk-yV-qUj" firstAttribute="top" secondItem="il1-Dw-fxq" secondAttribute="top" constant="9" id="zjM-W9-dkn"/>
+                    <constraint firstItem="jxk-yV-qUj" firstAttribute="top" secondItem="il1-Dw-fxq" secondAttribute="top" constant="15" id="zjM-W9-dkn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Tpr-Eg-3d2"/>

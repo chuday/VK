@@ -10,9 +10,7 @@ import Alamofire
 import AlamofireImage
 
 class NetworkManager {
-    
-    let dispatchGroup = DispatchGroup()
-    
+        
     static let shared = NetworkManager()
     
     let baseUrl = "https://api.vk.com"
@@ -46,13 +44,36 @@ class NetworkManager {
         }
     }
     
+//    func loadNewsVKData(userPath: String, completion: @escaping ([NewsVK]) -> Void  ) {
+//
+//        let path = "/method/newsfeed.get"
+//        let methodName: Parameters = [
+//            "filters": "post",
+//            "start_from": "next_from",
+//            "count": "25",
+//            "access_token": apiKey,
+//            "v": "5.103"
+//        ]
+//
+//        let url = baseUrl+path
+//        AF.request(url, method: .get, parameters: methodName).responseData { response in
+//            guard let data = response.value else { return }
+////            let newsArray = try! JSONDecoder().decode(NewsVKResponce.self, from: data)
+//            guard let newsArray = try? JSONDecoder().decode(NewsVKResponce.self, from: data) else { return }
+//
+////            newsArray.response.items.forEach { print( $0.postID )}
+//            completion(newsArray.response.items)
+//
+//        }
+//    }
+
     func loadNewsVKData(userPath: String, completion: @escaping ([NewsVK]) -> Void  ) {
         
         let path = "/method/newsfeed.get"
         let methodName: Parameters = [
             "filters": "post",
             "start_from": "next_from",
-            "count": "5",
+            "count": "25",
             "access_token": apiKey,
             "v": "5.103"
         ]
@@ -60,11 +81,15 @@ class NetworkManager {
         let url = baseUrl+path
         AF.request(url, method: .get, parameters: methodName).responseData { response in
             guard let data = response.value else { return }
-//            let newsArray = try! JSONDecoder().decode(NewsVKResponce.self, from: data)
-            guard let newsArray = try? JSONDecoder().decode(NewsVKResponce.self, from: data) else { return }
-            
+            if let newsArray = try? JSONDecoder().decode(NewsVKResponce.self, from: data) {
+                completion(newsArray.response.items)
+
+            } else {
+                print("Error")
+            }
+
 //            newsArray.response.items.forEach { print( $0.postID )}
-            completion(newsArray.response.items)
+
         }
     }
     

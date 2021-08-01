@@ -19,6 +19,8 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var imageAvtor: UIImageView!
     @IBOutlet weak var imageNews: UIImageView!
     
+
+    
     
     static let dateFormatter: DateFormatter = {
         let df = DateFormatter()

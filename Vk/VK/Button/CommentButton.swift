@@ -19,6 +19,7 @@ class CommentButton: UIControl {
     
     private var stackView: UIStackView!
     private var commentLabel: UILabel!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,7 +49,7 @@ class CommentButton: UIControl {
     
     private func updateLabelText() {
         commentLabel.text = "comment"
-        
+
     }
     
     private func updateSelectionState() {
@@ -66,6 +67,7 @@ class CommentButton: UIControl {
     }
     
     func textCommentChange() {
-        UIView.transition(with: commentLabel, duration: 0.5, options: [.transitionCrossDissolve]) { self.commentLabel.text = "change"}
+        UIView.transition(with: commentLabel, duration: 0.5, options: [.transitionCrossDissolve])
+                                                             { self.commentLabel.text = "change"}
     }
 }
