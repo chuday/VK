@@ -7,7 +7,8 @@
 
 import UIKit
 
-@IBDesignable class MyView: UIView {
+//@IBDesignable
+class MyView: UIView {
     
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
@@ -49,7 +50,7 @@ import UIKit
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-
+        
         let imageView = UIImageView()
         imageView.image = image
         imageView.frame = layer.bounds
