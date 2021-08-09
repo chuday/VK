@@ -13,12 +13,12 @@ struct Post {
     let body: String
 }
 
-class ParseDataOperation: Operation {
-    
-    var outputData: [Post] = []
-    override func main() {
-        guard let getDataOperation = dependencies.first as? GetDataOperation,
-              let data = getDataOperation.data else { return }
-          }
-    
-}
+//class ParseDataOperation: Operation {
+//    
+//    var outputData: [Post] = []
+//    override func main() {
+//        guard let getDataOperation = dependencies.first as? GetDataOperation,
+//              let data = getDataOperation.data else { return }
+//          }
+//    
+//}
