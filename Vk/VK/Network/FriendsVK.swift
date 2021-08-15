@@ -13,15 +13,18 @@ class FriendsResponce: Decodable {
 }
 
 class Friends: Decodable {
-    let items: [FriendsMap]
+    let items: [FriendsVK]
 }
 
-class FriendsMap: Object, Decodable {
-
+class FriendsVK: Object, Decodable {
+    
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""
     @objc dynamic var avatar: String = ""
     @objc dynamic var id: Int = 0
+    
+    // 6
+    @objc dynamic var friendInfo: String = ""
     
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
@@ -37,5 +40,8 @@ class FriendsMap: Object, Decodable {
         self.lastName = try values.decode(String.self, forKey: .lastName)
         self.id = try values.decode(Int.self, forKey: .id)
         self.avatar = try values.decode(String.self, forKey: .avatar)
+        
+        // 6
+        self.friendInfo = friendInfo
     }
 }

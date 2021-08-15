@@ -9,14 +9,17 @@ import UIKit
 
 class SwipeImage: UIViewController {
     
-    var usersPhoto: [String] = []
+    var usersPhoto:  [PhotoVK] = []
+    //    var usersPhoto: [String] = []
     var selectedIndex: Int = 0
     
-
+    
     @IBOutlet weak var detailPhoto: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailPhoto.image = UIImage(named: usersPhoto[selectedIndex])
+        
+        detailPhoto.af.setImage(withURL: URL(string: usersPhoto[selectedIndex].sizes.last?.url ?? "")!)
+        //        detailPhoto.image = UIImage(named: usersPhoto[selectedIndex])
         detailPhoto.backgroundColor = view.backgroundColor
         let swipeLeft = UISwipeGestureRecognizer (target: self, action: #selector(swipeLeftAction))
         swipeLeft.direction = .left
@@ -29,11 +32,13 @@ class SwipeImage: UIViewController {
     
     @objc func swipeLeftAction() {
         guard usersPhoto.count > selectedIndex + 1 else {return}
-        let nextImage = UIImage(named: usersPhoto [selectedIndex + 1])
         let newTempImgView = UIImageView ()
+        
+        newTempImgView.af.setImage(withURL: URL(string: usersPhoto[selectedIndex + 1].sizes.last?.url ?? "")!)
+        //        let nextImage = UIImage(named: usersPhoto [selectedIndex + 1])
         newTempImgView.backgroundColor = view.backgroundColor
         newTempImgView.contentMode = .scaleAspectFit
-        newTempImgView.image = nextImage
+        //        newTempImgView.image = nextImage
         newTempImgView.frame = detailPhoto.frame
         newTempImgView.frame.origin.x += detailPhoto.frame.maxX
         view.addSubview(newTempImgView)
@@ -45,20 +50,24 @@ class SwipeImage: UIViewController {
                 newTempImgView.frame.origin.x = 0
             }
         } completion: { _ in
-            self.detailPhoto.image = nextImage
+            self.detailPhoto.af.setImage(withURL: URL(string: self.usersPhoto[self.selectedIndex + 1].sizes.last?.url ?? "")!)
+            
+            //            self.detailPhoto.image = nextImage
             self.detailPhoto.transform = .identity
             newTempImgView.removeFromSuperview()
             self.selectedIndex += 1
         }
-
+        
     }
     @objc func swipeRightAction() {
         guard selectedIndex - 1 >= 0 else {return}
-        let nextImage = UIImage(named: usersPhoto [selectedIndex - 1])
+        //        let nextImage = UIImage(named: usersPhoto [selectedIndex - 1])
         let newTempImgView = UIImageView ()
+        newTempImgView.af.setImage(withURL: URL(string: usersPhoto[selectedIndex - 1].sizes.last?.url ?? "")!)
+        
         newTempImgView.backgroundColor = view.backgroundColor
         newTempImgView.contentMode = .scaleAspectFit
-        newTempImgView.image = nextImage
+        //        newTempImgView.image = nextImage
         newTempImgView.frame = detailPhoto.frame
         newTempImgView.transform = CGAffineTransform (scaleX: 0.8, y: 0.8)
         view.addSubview(newTempImgView)
@@ -72,7 +81,9 @@ class SwipeImage: UIViewController {
                 newTempImgView.transform = .identity
             }
         } completion: { _ in
-            self.detailPhoto.image = nextImage
+            self.detailPhoto.af.setImage(withURL: URL(string: self.usersPhoto[self.selectedIndex - 1].sizes.last?.url ?? "")!)
+            
+            //            self.detailPhoto.image = nextImage
             self.detailPhoto.transform = .identity
             newTempImgView.removeFromSuperview()
             self.selectedIndex -= 1
