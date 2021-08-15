@@ -29,26 +29,16 @@ class NewsTableViewController: UITableViewController {
     
     var newsVKArray: [NewsVK] = []
     
-    let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "dd.MM.yyyy HH.mm"
-        return df
-    }()
-    
     private func getNewsData() {
         NetworkManager.shared.loadNewsVKData(userPath: "newsfeed.get") { [ weak self ] newsData in
             DispatchQueue.main.async {
 
                 self?.newsVKArray = newsData
                 
-                print("Response likes: \(self?.newsVKArray.map {$0.likes.count})")
-                print("Response comments: \(self?.newsVKArray.map {$0.comments.count})")
-
+//                print("Response likes: \(self?.newsVKArray.map {$0.likes.count})")
+//                print("Response comments: \(self?.newsVKArray.map {$0.comments.count})")
 
                 self?.tableView.reloadData()
-                
-                
-                
             }
         }
         dispatchGroup.notify(queue: DispatchQueue.main) {
@@ -61,16 +51,12 @@ class NewsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         getNewsData()
-        
-        
 //                NetworkManager.shared.loadNewsVKData(userPath: "newsfeed.get") { [ weak self ] newsData in
 //                    DispatchQueue.main.async {
 //                        self?.newsVKArray = newsData
 //                        self?.tableView.reloadData()
 //                    }
 //                }
-        
-        
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         
         newsArray = [

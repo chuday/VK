@@ -45,6 +45,8 @@
 		7EBE6FA626BBB35B0014DA71 /* GetDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE6FA526BBB35B0014DA71 /* GetDataOperation.swift */; };
 		7EBE6FA826BBB36B0014DA71 /* ParseDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE6FA726BBB36B0014DA71 /* ParseDataOperation.swift */; };
 		7EBE6FAC26BC5B440014DA71 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE6FAB26BC5B440014DA71 /* AsyncOperation.swift */; };
+		7EC01C5D26C91A6E00694A20 /* FriendImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC01C5C26C91A6E00694A20 /* FriendImageCollectionViewCell.swift */; };
+		7EC01C5F26C9255D00694A20 /* FriendImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC01C5E26C9255D00694A20 /* FriendImageViewController.swift */; };
 		7ECBA81026047B3900FABE9D /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECBA80F26047B3900FABE9D /* Gradient.swift */; };
 		7EDCCD2225F9471B0078155C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */; };
 		7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDCCD2625F948850078155C /* FriendTableViewCell.swift */; };
@@ -122,6 +124,8 @@
 		7EBE6FA526BBB35B0014DA71 /* GetDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataOperation.swift; sourceTree = "<group>"; };
 		7EBE6FA726BBB36B0014DA71 /* ParseDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseDataOperation.swift; sourceTree = "<group>"; };
 		7EBE6FAB26BC5B440014DA71 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		7EC01C5C26C91A6E00694A20 /* FriendImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EC01C5E26C9255D00694A20 /* FriendImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendImageViewController.swift; sourceTree = "<group>"; };
 		7ECBA80F26047B3900FABE9D /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		7EDCCD2125F9471B0078155C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		7EDCCD2625F948850078155C /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
@@ -258,6 +262,15 @@
 			path = Operation;
 			sourceTree = "<group>";
 		};
+		7EC01C6026C97B8000694A20 /* Optimization */ = {
+			isa = PBXGroup;
+			children = (
+				7EC01C5E26C9255D00694A20 /* FriendImageViewController.swift */,
+				7EC01C5C26C91A6E00694A20 /* FriendImageCollectionViewCell.swift */,
+			);
+			path = Optimization;
+			sourceTree = "<group>";
+		};
 		7EDCCD3D25F962360078155C /* Friend */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +280,7 @@
 				7EDCCD3825F959190078155C /* ImageFriendViewController.swift */,
 				7E21A025260F9EE90019DFEC /* FriendsTableViewHeader.swift */,
 				7E21A026260F9EE90019DFEC /* FriendsTableViewHeader.xib */,
+				7EC01C6026C97B8000694A20 /* Optimization */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -628,6 +642,7 @@
 				7E21A041260F9FBE0019DFEC /* ShareButton.swift in Sources */,
 				7E13C7D4266A59C700070728 /* VKNewsTableViewController.swift in Sources */,
 				7E13C7DD266BA2E200070728 /* VKTextPostTableViewCell.swift in Sources */,
+				7EC01C5D26C91A6E00694A20 /* FriendImageCollectionViewCell.swift in Sources */,
 				7E3B54802626C4F20050C9DE /* Sesson.swift in Sources */,
 				7E11399025F80D33002943B7 /* ImageGroupViewController.swift in Sources */,
 				7E21A03C260F9FA20019DFEC /* CommentButton.swift in Sources */,
@@ -662,6 +677,7 @@
 				7EFB66B525EBA30B00711CC0 /* AppDelegate.swift in Sources */,
 				7EDCCD2725F948850078155C /* FriendTableViewCell.swift in Sources */,
 				7EFB66B725EBA30B00711CC0 /* SceneDelegate.swift in Sources */,
+				7EC01C5F26C9255D00694A20 /* FriendImageViewController.swift in Sources */,
 				7EBE6FA826BBB36B0014DA71 /* ParseDataOperation.swift in Sources */,
 				7E147AB8263D0C0600727AC8 /* GroupVK.swift in Sources */,
 				7E11398625F802A1002943B7 /* GroupTableViewCell.swift in Sources */,

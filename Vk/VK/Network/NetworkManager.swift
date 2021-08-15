@@ -131,66 +131,66 @@ class NetworkManager {
     }
     
     // Promise
-    func getFriendsPromise(userPath: String) -> Promise<[FriendsVK]> {
-        let path = "/method/" + userPath
-        
-        let params: Parameters = [
-            "q": userPath,
-            "count": "10",
-            "access_token": apiKey,
-            "v": "5.130",
-            "fields": "photo_50"
-        ]
-        
-        let url = baseUrl+path
-        
-        let promise = Promise<[FriendsVK]> { resolver in
-            AF.request(url, method: .get, parameters: params).responseJSON { response in
-            
-                switch response.result {
-                case let .success(json):
-                    
-                    guard let data = response.value else { return }
-                    let userArray = try! JSONDecoder().decode(FriendsResponce.self, from: data)
-
-                    resolver.fulfill(userArray.response.items)
-                    
-                    case let .failure(error):
-                    resolver.reject(error)
- 
-                }
-            }
-        }
-         return promise
-    }
+//    func getFriendsPromise(userPath: String) -> Promise<[FriendsVK]> {
+//        let path = "/method/" + userPath
+//        
+//        let params: Parameters = [
+//            "q": userPath,
+//            "count": "10",
+//            "access_token": apiKey,
+//            "v": "5.130",
+//            "fields": "photo_50"
+//        ]
+//        
+//        let url = baseUrl+path
+//        
+//        let promise = Promise<[FriendsVK]> { resolver in
+//            AF.request(url, method: .get, parameters: params).responseJSON { response in
+//            
+//                switch response.result {
+//                case let .success(json):
+//                    
+//                    guard let data = response.value else { return }
+//                    let userArray = try! JSONDecoder().decode(FriendsResponce.self, from: data)
+//
+//                    resolver.fulfill(userArray.response.items)
+//                    
+//                    case let .failure(error):
+//                    resolver.reject(error)
+// 
+//                }
+//            }
+//        }
+//         return promise
+//    }
     
     // Promise 2
 
-    func getFriendsPromise2(userPath: String) -> Promise<[FriendsVK]> {
-        let path = "/method/" + userPath
-        
-        let params: Parameters = [
-            "q": userPath,
-            "count": "10",
-            "access_token": apiKey,
-            "v": "5.130",
-            "fields": "photo_50"
-        ]
-        
-        let url = baseUrl+path
-        
-        return Promise { resolver in
-            AF.request(url, method: .get, parameters: params).responseJSON { response in
-                switch response.result {
-                case let .success(json):
-                    let friends = FriendsVK(JSON(json), Friends: Friends)
-                    resolver.fulfill(friends)
-                case let .failure(error):
-                resolver.reject(error)
-                }
-        }
-    }
-}
+//    func getFriendsPromise2(userPath: String) -> Promise<[FriendsVK]> {
+//        let path = "/method/" + userPath
+//
+//        let params: Parameters = [
+//            "q": userPath,
+//            "count": "10",
+//            "access_token": apiKey,
+//            "v": "5.130",
+//            "fields": "photo_50"
+//        ]
+//
+//        let url = baseUrl+path
+//
+//        return Promise { resolver in
+//            AF.request(url, method: .get, parameters: params).responseJSON { response in
+//                switch response.result {
+//                case let .success(json):
+//                    let friends = FriendsVK(JSON(json), Friends: Friends)
+//                    resolver.fulfill(friends)
+//                case let .failure(error):
+//                resolver.reject(error)
+//                }
+//        }
+//    }
+//}
 
     
     func groupVK(userPath: String, completion: @escaping ([GroupVK]) -> Void){
