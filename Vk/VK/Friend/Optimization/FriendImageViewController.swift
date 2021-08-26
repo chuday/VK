@@ -45,14 +45,14 @@ extension FriendImageViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FriendImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! FriendImageCollectionViewCell
         let imagesGroups = imagesGroup[indexPath.item]
         cell.nameFriendLabel?.text = "\(imagesGroups.info)"
         cell.friendInfoLabel?.text = imagesGroups.name
         cell.imageFriend?.image = imagesGroups.image
         
-        cell.setNameFriends(text: imagesGroups.info)
-        cell.setFriendsInfo(text: imagesGroups.name)
+//        cell.setNameFriends(text: imagesGroups.info)
+//        cell.setFriendsInfo(text: imagesGroups.name)
         
         return cell
     }

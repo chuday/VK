@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 
 class GetDataOperation : AsyncOperation {
@@ -14,18 +15,18 @@ class GetDataOperation : AsyncOperation {
         super.cancel()
     }
     
-//    private var request: DataRequest
-//    var data: Data?
-//    override func main() {
-//        request.responseData(queue: DispatchQueue.global()) { [weak self]
-//            response in
-//            self?.data = response.data
-//            self?.state = .finished
-//        }
-//    }
-//
-//    init(request: DataRequest) { self.request = request
-//    }
+    private var request: DataRequest = AF.request("https://api.vk.com/method/groups.get")
+    var data: Data?
+    override func main() {
+        request.responseData(queue: DispatchQueue.global()) { [weak self]
+            response in
+            self?.data = response.data
+            self?.state = .finished
+        }
+    }
+
+    init(request: DataRequest) { self.request = request
+    }
     
 }
 

@@ -56,6 +56,7 @@
 		7EEF204F26B0129700758F79 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF204E26B0129700758F79 /* Comment.swift */; };
 		7EEF9FE7262EA045009AD55F /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF9FE6262EA045009AD55F /* WKViewController.swift */; };
 		7EEF9FF4262FF3DF009AD55F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEF9FF3262FF3DF009AD55F /* NetworkManager.swift */; };
+		7EF02B6426D421D600A66330 /* ReloadTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF02B6326D421D600A66330 /* ReloadTableController.swift */; };
 		7EFB66B525EBA30B00711CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */; };
 		7EFB66B725EBA30B00711CC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */; };
 		7EFB66BC25EBA30B00711CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFB66BA25EBA30B00711CC0 /* Main.storyboard */; };
@@ -135,6 +136,7 @@
 		7EEF204E26B0129700758F79 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		7EEF9FE6262EA045009AD55F /* WKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
 		7EEF9FF3262FF3DF009AD55F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7EF02B6326D421D600A66330 /* ReloadTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTableController.swift; sourceTree = "<group>"; };
 		7EFB66B125EBA30B00711CC0 /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFB66B425EBA30B00711CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFB66B625EBA30B00711CC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 			path = Group;
 			sourceTree = "<group>";
 		};
-		7E13C7DB266BA24700070728 /* NewsVK 2.0 */ = {
+		7E13C7DB266BA24700070728 /* NewsVK 2.0 Test */ = {
 			isa = PBXGroup;
 			children = (
 				7E13C7D3266A59C700070728 /* VKNewsTableViewController.swift */,
@@ -205,7 +207,7 @@
 				7E13C7D9266A5E6000070728 /* VKBarButton.swift */,
 				7E3DC396266D36AD00E40734 /* VKNews.swift */,
 			);
-			path = "NewsVK 2.0";
+			path = "NewsVK 2.0 Test";
 			sourceTree = "<group>";
 		};
 		7E21A032260F9F650019DFEC /* Button */ = {
@@ -224,7 +226,7 @@
 				7E21A049260FA01F0019DFEC /* NewsTableViewController.swift */,
 				7E21A051260FA0620019DFEC /* NewsTableViewCell.swift */,
 				7E21A052260FA0620019DFEC /* NewsTableViewCell.xib */,
-				7E13C7DB266BA24700070728 /* NewsVK 2.0 */,
+				7E13C7DB266BA24700070728 /* NewsVK 2.0 Test */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -258,6 +260,7 @@
 				7EBE6FA526BBB35B0014DA71 /* GetDataOperation.swift */,
 				7EBE6FAB26BC5B440014DA71 /* AsyncOperation.swift */,
 				7EBE6FA726BBB36B0014DA71 /* ParseDataOperation.swift */,
+				7EF02B6326D421D600A66330 /* ReloadTableController.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				7E3DC397266D36AD00E40734 /* VKNews.swift in Sources */,
 				7E24611926012A95006F3143 /* MyImageView.swift in Sources */,
 				7E11398125F80157002943B7 /* GroupsTableViewController.swift in Sources */,
+				7EF02B6426D421D600A66330 /* ReloadTableController.swift in Sources */,
 				7E21A04A260FA01F0019DFEC /* NewsTableViewController.swift in Sources */,
 				7EEF9FE7262EA045009AD55F /* WKViewController.swift in Sources */,
 				7EEF9FF4262FF3DF009AD55F /* NetworkManager.swift in Sources */,

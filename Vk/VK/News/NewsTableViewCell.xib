@@ -134,9 +134,12 @@
             <viewLayoutGuide key="safeArea" id="Tpr-Eg-3d2"/>
             <connections>
                 <outlet property="avtorLabel" destination="jxk-yV-qUj" id="kSb-h3-sYF"/>
+                <outlet property="comment" destination="385-ul-oCb" id="sX0-tr-13C"/>
                 <outlet property="dataLabel" destination="vmt-ZH-lFn" id="qKO-rz-JTx"/>
                 <outlet property="imageAvtor" destination="aUh-iD-FVS" id="DTf-y8-KHl"/>
                 <outlet property="imageNews" destination="jsh-29-4IO" id="nxK-7O-0JK"/>
+                <outlet property="like" destination="y7j-iK-8EV" id="j6Q-VW-tHI"/>
+                <outlet property="share" destination="3Ar-Qv-jwu" id="vtJ-1M-L19"/>
                 <outlet property="textNews" destination="A1s-Kb-EoI" id="6nj-8y-8Tj"/>
             </connections>
             <point key="canvasLocation" x="53.623188405797109" y="252.12053571428569"/>
