@@ -13,7 +13,7 @@ struct ImageData {
 }
 
 class ImageGroupViewController: UIViewController {
-  
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -22,7 +22,7 @@ class ImageGroupViewController: UIViewController {
     }
     
     var imagesGroup = [ImageData]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         imagesGroup = [

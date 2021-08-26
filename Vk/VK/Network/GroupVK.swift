@@ -13,10 +13,10 @@ class GroupssResponce: Decodable {
 }
 
 class Groups: Decodable {
-    let items: [GroupMapp]
+    let items: [GroupVK]
 }
 
-class GroupMapp: Object, Decodable {
+class GroupVK: Object, Decodable {
     
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
