@@ -18,21 +18,26 @@ class News: Codable {
 }
 
 class NewsVK: Codable {
-    var postID: Int
-    var text: String
-    var date: Double
-    var attachments: [Attachment]?
-    var likes: LikeModel
-    var comments: CommentModel
-    var sourceID: Int
-    var avatarURL: String?
-    var creatorName: String?
+    let postID: Int
+    let text: String
+    let date: Double
+    let attachments: [Attachment]?
+    let likes: LikeModel
+    let comments: CommentModel
+    let sourceID: Int
+    let avatarURL: String?
+    let creatorName: String?
     var photosURL: [String]? {
         get {
             let photosURL = attachments?.compactMap{ $0.photo?.sizes?.last?.url }
             return photosURL
         }
     }
+    
+// свойтсво для разворота ячейки
+    var isExpandet: Bool = false
+    
+    var textHeight: CGFloat = 0
     
     var newsInfo: String = ""
     
@@ -48,6 +53,15 @@ class NewsVK: Codable {
         case creatorName
     }
 
+    // расчет высоты
+    func calculateTextHeight(from width: CGFloat, font: UIFont = .systemFont(ofSize: 15)) {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let size = text.boundingRect(with: constraintRect,
+                          options: .usesLineFragmentOrigin,
+                          attributes: [NSAttributedString.Key.font: font],
+                          context: nil)
+        textHeight = size.height
+    }
 
     class Attachment: Codable {
         let type: String?

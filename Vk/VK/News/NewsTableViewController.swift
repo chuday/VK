@@ -46,21 +46,31 @@ class NewsTableViewController: UITableViewController {
     var newsVKArray: [NewsVK] = []
     
     private func getNewsData() {
+        
+        let width = view.frame.width
+        
         NetworkManager.shared.loadNewsVKData(userPath: "newsfeed.get") { [ weak self ] newsData in
-            DispatchQueue.main.async {
-
-                self?.newsVKArray = newsData
-                
-//                print("Response likes: \(self?.newsVKArray.map {$0.likes.count})")
-//                print("Response comments: \(self?.newsVKArray.map {$0.comments.count})")
-
-                self?.tableView.reloadData()
-            }
+            
+            self?.reloadItems(items: newsData, width: width)
+            
         }
         dispatchGroup.notify(queue: DispatchQueue.main) {
             print(self.newsVKArray)
         }
     }
+    
+    func reloadItems(items: [NewsVK], width: CGFloat) {
+        DispatchQueue.global().async {
+            
+            items.forEach({ $0.calculateTextHeight(from: width) })
+            DispatchQueue.main.async {
+
+                self.newsVKArray = items
+
+                self.tableView.reloadData()
+        }
+    }
+}
     
     
     override func viewDidLoad() {
@@ -120,6 +130,18 @@ class NewsTableViewController: UITableViewController {
 //        cell.imageNews.af.setImage(withURL: URL(string: newsInfo.photosURL?.first ?? "" )!)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let newsInfo = newsVKArray[indexPath.item]
+        return newsInfo.textHeight + NewsTableViewCell.heightOfElements()
+    }
+    
+    func didTap(cell: NewsTableViewCell, item: NewsVK) {
+        item.isExpandet = !item.isExpandet
+        
+        let indexPath = tableView.indexPath(for: cell)
+        tableView.reloadRows(at: [IndexPath].init(), with: .automatic)
     }
     
     

@@ -7,11 +7,25 @@
 
 import UIKit
 
+protocol NewsTableViewCellDelegate: Any {
+    func didTap(cell: NewsTableViewCell, item: NewsVK)
+}
+
 class NewsTableViewCell: UITableViewCell {
+    
+     var delegate: NewsTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    static let margins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
+    static func heightOfElements() -> CGFloat {
+        margins.top + margins.bottom
+    }
+    
+    static let defaultTextHeight: CGFloat = 200
     
     @IBOutlet weak var avtorLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
@@ -36,6 +50,17 @@ class NewsTableViewCell: UITableViewCell {
         
         dataLabel.text = stringDate
         like.likeCount = newsVK.likes.count
+        
+//        if newsVK.textHeight < NewsTableViewCell.defaultTextHeight || newsVK.isExpandet {
+//            textNews.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: newsVK.textHeight)
+//        } else {
+//            textNews.frame = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: NewsTableViewCell.defaultTextHeight)
+//        }
+    }
+    
+    // для кнопки разворота
+    func didTapShow() {
+//        delegate
     }
     
     override func prepareForReuse() {
@@ -45,6 +70,5 @@ class NewsTableViewCell: UITableViewCell {
         textNews.text = ""
         imageView?.image = nil
     }
-    
     
 }
