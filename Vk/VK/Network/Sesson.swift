@@ -9,10 +9,8 @@ import UIKit
 class Sessions {
     
     static let shared = Sessions()
-        
     private init(){}
     
     var token = ""
     var userId = 0
-   
 }
