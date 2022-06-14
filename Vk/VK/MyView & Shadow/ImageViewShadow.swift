@@ -7,7 +7,8 @@
 
 import UIKit
 
-@IBDesignable class ImageViewShadow: UIView {
+//@IBDesignable
+class ImageViewShadow: UIView {
     @IBInspectable var shadowColor: UIColor = .black {
         didSet {
             layer.shadowColor = shadowColor.cgColor

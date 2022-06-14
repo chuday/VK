@@ -8,16 +8,18 @@
 import UIKit
 
 
-@IBDesignable class CommentButton: UIControl {
+//@IBDesignable
+class CommentButton: UIControl {
     
     @IBInspectable var comment: String = "" {
         didSet {
-          updateLabelText()
+            updateLabelText()
         }
     }
-  
+    
     private var stackView: UIStackView!
     private var commentLabel: UILabel!
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +49,7 @@ import UIKit
     
     private func updateLabelText() {
         commentLabel.text = "comment"
-        
+
     }
     
     private func updateSelectionState() {
@@ -61,10 +63,11 @@ import UIKit
         updateSelectionState()
         sendActions(for: .valueChanged)
         textCommentChange()
-
+        
     }
     
     func textCommentChange() {
-        UIView.transition(with: commentLabel, duration: 0.5, options: [.transitionCrossDissolve]) { self.commentLabel.text = "change"}
+        UIView.transition(with: commentLabel, duration: 0.5, options: [.transitionCrossDissolve])
+                                                             { self.commentLabel.text = "change"}
     }
 }

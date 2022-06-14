@@ -11,7 +11,7 @@ import UIKit
 class CustomNavigationController: UINavigationController, UINavigationControllerDelegate {
     
     let interactiveTransition = CustomInteractiveTransition()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -21,7 +21,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
                               animationControllerFor operation: UINavigationController.Operation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController)
-                              -> UIViewControllerAnimatedTransitioning? {
+    -> UIViewControllerAnimatedTransitioning? {
         if operation == .push {
             self.interactiveTransition.viewController = toVC
             return CustomPushAnimator()
@@ -36,7 +36,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
     
     func navigationController(_ navigationController: UINavigationController,
                               interactionControllerFor animationController: UIViewControllerAnimatedTransitioning)
-                              -> UIViewControllerInteractiveTransitioning? {
+    -> UIViewControllerInteractiveTransitioning? {
         return interactiveTransition.hasStarted ? interactiveTransition : nil
     }
 }
